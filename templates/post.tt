@@ -1,0 +1,15 @@
+[% WRAPPER skeleton.tt %]
+    <div class="post">
+      <div class="post-header">
+        <a class="post-title" href="[% page_name %].html">[% title %]</a>
+      </div>
+
+      <div class="post-duration duration">
+        [% date %]
+      </div>
+
+      <div class="post-content">
+        [% content %]
+      </div>
+    </div>
+[% END %]

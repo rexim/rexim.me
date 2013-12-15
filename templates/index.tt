@@ -1,0 +1,24 @@
+[% WRAPPER skeleton.tt %]
+    <div class="splash post-content">
+      <p>Hello and Welcome to my little Corner of the Internet! Below
+      you can see some posts of mine. There are not so much of them,
+      but I hope I will write more.</p>
+    </div>
+
+    <div class="archive-title">
+      All posts
+    </div>
+
+    <div class="archive">
+      [% FOR post IN posts %]
+      <div class="archive-entry">
+        <div>
+          <a href="[% post.page_name %].html" class="archive-entry-title">[% post.title %]</a>
+        </div>
+        <div class="archive-entry-duration duration">
+          [% post.date %]
+        </div>
+      </div>
+      [% END %]
+    </div>
+[% END %]
