@@ -68,6 +68,10 @@ body {
     margin-top: 5px;
 }
 
+.post-content strong {
+    font-weight: bold;
+}
+
 .post-content a {
     color: #22f;
     text-decoration: underline;
