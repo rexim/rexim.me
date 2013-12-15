@@ -1,6 +1,7 @@
 #!/usr/bin/env perl
 
 use Data::Dumper;
+use DateTime;
 use DateTime::Format::RFC3339;
 use DateTime::Format::Mail;
 use Text::Markdown 'markdown';
@@ -45,7 +46,9 @@ foreach (@$post_file_names) {
     push @posts, $post;
 }
 
-sort { DateTime->compare($b->{date}, $a->{date}); } @posts;
+@posts = sort {
+    DateTime->compare($b->{date}, $a->{date});
+} @posts;
 
 print "index.html ... ";
 $template->process("./templates/index.tt",
