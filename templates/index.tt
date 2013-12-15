@@ -1,8 +1,9 @@
 [% WRAPPER skeleton.tt %]
     <div class="splash post-content">
-      <p>Hello and Welcome to my little Corner of the Internet! Below
-      you can see some posts of mine. There are not so much of them,
-      but I hope I will write more.</p>
+      <p>Hello and welcome to my little corner of the Internet! I am
+      just a man who likes to program stuff, play stuff, learn stuff,
+      and watch stuff. Below you can see some posts of mine. There are
+      not so many of them, but I hope I will write more.</p>
     </div>
 
     <div class="archive-title">
