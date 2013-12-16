@@ -22,3 +22,75 @@ method is the integer should be between 1 and 12. So the idea of LSP
 is the subtype of the class should derive both the method and
 assumption. It is important because then the class can be safely
 replaced by the subclass without violation correctness of the program.
+
+    import java.io.*;
+    import java.util.*;
+
+    public class Main {
+
+        void solve() throws IOException {
+            int n = nextInt();
+
+            double R = nextDouble();
+            double r = nextDouble();
+
+            if(n > 1) {
+                double beta = 2 * Math.PI / n;
+                double a = R - r;
+                // double b = a * Math.sqrt(2.0 * (1.0 - Math.cos(beta)));
+                double b = 2.0 * a * Math.sin(beta / 2.0);
+
+                if(b > 2.0 * r || Math.abs(b - 2.0 * r) < 1e-6)
+                    out.println("YES");
+                else
+                    out.println("NO");
+            } else {
+                if(R > r || Math.abs(R - r) < 1e-6)
+                    out.println("YES");
+                else
+                    out.println("NO");
+            }
+        }
+
+        void run() throws IOException {
+            in = new BufferedReader(new InputStreamReader(System.in));
+            out = System.out;
+            solve();
+            in.close();
+            //out.close();
+        }
+
+        BufferedReader in;
+        PrintStream out;
+        StringTokenizer tok;
+
+        void take() throws IOException {
+            tok = new StringTokenizer(in.readLine());
+        }
+
+        String nextToken() throws IOException {
+            while(tok == null || !tok.hasMoreTokens())
+                take();
+
+            return tok.nextToken();
+        }
+
+        int nextInt() throws IOException {
+            return Integer.parseInt(nextToken());
+        }
+
+        long nextLong() throws IOException {
+            return Long.parseLong(nextToken());
+        }
+
+        double nextDouble() throws IOException {
+            return Double.parseDouble(nextToken());
+        }
+
+        public static void main(String[] args) throws IOException {
+            new Main().run();
+        }
+    }
+    --------------------------------------------------------------------------------
+
+That's it!
