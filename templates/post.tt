@@ -1,4 +1,6 @@
-[% WRAPPER skeleton.tt %]
+[% WRAPPER skeleton.tt
+   title = title _ ' - Little Corner of the Internet'
+%]
     <div class="post">
       <div class="post-header">
         <a class="post-title" href="[% page_name %].html">[% title %]</a>

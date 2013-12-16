@@ -1,4 +1,6 @@
-[% WRAPPER skeleton.tt %]
+[% WRAPPER skeleton.tt
+   title = 'Little Corner of the Internet'
+%]
     <div class="splash post-content">
       <p>Hello and welcome to my little corner of the Internet! I am
       just a man who likes to program stuff, play stuff, learn stuff,
