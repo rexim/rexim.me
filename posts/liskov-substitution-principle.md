@@ -18,5 +18,5 @@ content: |-
 
   This method must return an integer. And the assumption above this
   method is the integer should be between 1 and 12. So the idea of LSP
-  isthe subtype of the class should derive both the method and
+  is the subtype of the class should derive both the method and
   assumption.
