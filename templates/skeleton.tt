@@ -11,10 +11,9 @@
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="http://yandex.st/highlightjs/7.5/styles/default.min.css" />
 
-
     <script type="text/javascript" src="js/moment-2.4.0.min.js"></script>
     <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
-    <script type="text/javascript" src="http://yandex.st/highlightjs/7.5/highlight.min.js"></script>
+    <script type="text/javascript" src="js/highlight-7.5.min.js"></script>
     <script>
       hljs.initHighlightingOnLoad();
     </script>
