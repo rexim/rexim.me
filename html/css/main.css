@@ -5,13 +5,6 @@
     src: local('Fenix'), local('Fenix-Regular'), url(../fonts/Fenix.woff) format('woff');
 }
 
-@font-face {
-    font-family: 'Signika Negative';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Signika Negative'), local('SignikaNegative-Regular'), url(../fonts/Signika-Negative.woff) format('woff');
-}
-
 .left-cell {
     float: left;
     text-align: left;
