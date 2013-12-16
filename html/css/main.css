@@ -5,6 +5,13 @@
     src: local('Fenix'), local('Fenix-Regular'), url(../fonts/Fenix.woff) format('woff');
 }
 
+@font-face {
+  font-family: 'Oxygen Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Oxygen Mono'), local('OxygenMono-Regular'), url(../fonts/Oxygen-Mono.ttf) format('truetype');
+}
+
 .left-cell {
     float: left;
     text-align: left;
