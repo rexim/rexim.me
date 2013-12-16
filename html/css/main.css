@@ -129,8 +129,9 @@ body {
 }
 
 .post-content code {
-    font-family: monospace;
+    font-family: "Oxygen Mono";
     font-size: 14px;
+    line-height: 1.5;
 }
 
 .splash {
