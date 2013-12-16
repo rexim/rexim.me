@@ -19,4 +19,6 @@ content: |-
   This method must return an integer. And the assumption above this
   method is the integer should be between 1 and 12. So the idea of LSP
   is the subtype of the class should derive both the method and
-  assumption.
+  assumption. It is important because then the class can be safely
+  replaced by the subclass without violation correctness of the
+  program.
