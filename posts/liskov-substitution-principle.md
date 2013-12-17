@@ -3,8 +3,7 @@ author: rexim
 date: Sun, 15 Dec 2013 23:44:17 +0700
 
 <!-- OMG, markdown sucks! -->
-<img src="http://static3.wikia.nocookie.net/__cb20120626165124/adventuretimewithfinnandjake/images/5/51/LSP.png"
-style="float: left; width: 50%; margin-right: 20px;" />
+<img src="images/LSP.png" style="float: left; width: 50%; margin-right: 20px;" />
 
 The most mysterious [SOLID](http://en.wikipedia.org/wiki/SOLID)
 principle for me was always the third one. The
