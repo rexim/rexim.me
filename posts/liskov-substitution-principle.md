@@ -2,6 +2,10 @@ title: Liskov Substitution Principle
 author: rexim
 date: Sun, 15 Dec 2013 23:44:17 +0700
 
+<!-- OMG, markdown sucks! -->
+<img src="http://static3.wikia.nocookie.net/__cb20120626165124/adventuretimewithfinnandjake/images/5/51/LSP.png"
+style="float: left; width: 50%; margin-right: 20px;" />
+
 The most mysterious [SOLID](http://en.wikipedia.org/wiki/SOLID)
 principle for me was always the third one. The
 [Liskov Substitution Principle](http://en.wikipedia.org/wiki/Liskov_substitution_principle)
@@ -14,7 +18,9 @@ of assumptions (or properties) between these methods and fields. For
 example, we have a class with the following method:
 
     class Date {
+      ...
       def getMonthNumber(): Int
+      ...
     }
 
 This method must return an integer. And the assumption above this
