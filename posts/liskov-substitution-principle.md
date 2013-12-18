@@ -24,17 +24,19 @@ following class:
     }
 
 The method `getMonthNumber()` must return an integer. And the
-assumption is the integer should lie on `[1 .. 12]` interval.
+assumption is the integer should lie on `[1 .. 12]`. As you can see,
+an assumption is something beyond method's signature. It can't be
+checked in compile time. We should provide it ourselves.
 
-It's quite simple example, but that's enough to understand the idea of
-LSP:
+It's quite simple example, but I think it's enough to formalize the
+idea of LSP:
 
-> A subclass of a class should derive its assumptions (properties) as well
-> as its methods and fields.
+> A subclass of a class should derive its assumptions (properties) as
+> well as its methods and fields. So in the code an object of the
+> class can be safely substituted by an object of the subclass without
+> violating correctness of the program.
 
-It is important because then the class can be safely substituted by
-the subclass without violation correctness of the program (that's why
-it's called a substitution principle).
+Let's get back to the Square-Rectangle example. Rectangle:
 
     class Rectangle {
       var width: Int;
@@ -57,7 +59,7 @@ it's called a substitution principle).
       }
     }
 
-foo
+Square:
 
     class Square extends Rectangle {
       override def setWidget(x : Int) = {
