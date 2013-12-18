@@ -17,9 +17,9 @@ them. These assumptions are often called properties. And when we use
 the class somewhere we usually rely on this properties. Let's consider
 as an example the following class:
 
-    class Date {
+    public class Date {
       ...
-      def getMonthNumber(): Int
+      public int getMonthNumber() { ... }
       ...
     }
 
@@ -36,40 +36,58 @@ of LSP:
 > safely substituted by an object of the subclass without violating
 > correctness of the program.
 
-Let's get back to the Square-Rectangle example. Rectangle:
+Let's get back to the Square-Rectangle example. A square is a
+particular case of a rectangle. So `Rectangle` is a base class for
+`Square`. Let's define `Rectangle` as follow:
 
-    class Rectangle {
-      var width: Int;
-      var height: Int;
+    public class Rectangle {
+        public void setWidth(int x) {
+            width = x;
+        }
 
-      def getWidth: Int = {
-        return width;
-      }
+        public void setHeight(int x) {
+            height = x;
+        }
 
-      def getHeight: Int = {
-        return height;
-      }
+        public int getWidth() {
+            return width;
+        }
 
-      def setWidth(x : Int) = {
-        width = x;
-      }
+        public int getHeight() {
+            return height;
+        }
 
-      def setHeight(x : Int) = {
-        height = x;
-      }
+        protected int width = 0;
+        protected int height = 0;
     }
 
-Square:
+The class has two fields: `width` and `height`, and two setters and
+getters for them. A square is a rectangle with equal edges. This can
+be achived be overriding Rectangle's setters:
 
-    class Square extends Rectangle {
-      override def setWidget(x : Int) = {
-        width = x;
-        height = x;
-      }
+    public class Square extends Rectangle {
+        @Override
+        public void setWidth(int x) {
+            super.setWidth(x);
+            height = x;
+        }
 
-      override def setHeight(y : Int) = {
-        width = x;
-        height = x;
-      }
+        @Override
+        public void setHeight(int x) {
+            super.setHeight(x);
+            width = x;
+        }
     }
 
+This approach has several problem. The first one is it's some sort of
+overhead to have width and height for Square since they're always
+equal. It would be better to have only length of edge.
+
+The second problem is Square alters one of the Rectangle's
+properties. The property is setter changes only one
+parameter. `setWidget` changes only `width`, `setHeight` changes only
+`height`. But for Square every setter changes both parameters. The
+code which may use Rectangle probably doesn't even assume that. LSP
+has been violated!
+
+It is better to treat Rectangle and Square as different classes.
