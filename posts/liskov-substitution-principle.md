@@ -12,10 +12,10 @@ principle for me was always the third one. The
 Rectangle, but I didn't understand why it is violation of LSP.
 
 The principle has a pretty simple idea. A class is not just a set of
-methods and fields. We also have a number of assumption (they also
-called properties) between them. And when we use the class somewhere
-we usually rely on this assumptions. Let's consider as an example the
-following class:
+methods and fields. We also have a number of assumptions about
+them. These assumptions are often called properties. And when we use
+the class somewhere we usually rely on this properties. Let's consider
+as an example the following class:
 
     class Date {
       ...
@@ -23,18 +23,18 @@ following class:
       ...
     }
 
-The method `getMonthNumber()` must return an integer. And the
-assumption is the integer should lie on `[1 .. 12]`. As you can see,
-an assumption is something beyond method's signature. It can't be
-checked in compile time. We should provide it ourselves.
+The method `getMonthNumber()` must return an integer. And the property
+is the integer should lie on the interval `[1 .. 12]`. As you can see,
+a property is something beyond method's signature. It can't be checked
+in compile time. We should provide it ourselves.
 
-It's quite simple example, but I think it's enough to formalize the
-idea of LSP:
+It's a simple example, but I think it's enough to formalize the idea
+of LSP:
 
-> A subclass of a class should derive its assumptions (properties) as
-> well as its methods and fields. So in the code an object of the
-> class can be safely substituted by an object of the subclass without
-> violating correctness of the program.
+> A subclass of a class should derive its properties as well as its
+> methods and fields. So in the code an object of the class can be
+> safely substituted by an object of the subclass without violating
+> correctness of the program.
 
 Let's get back to the Square-Rectangle example. Rectangle:
 
@@ -72,3 +72,4 @@ Square:
         height = x;
       }
     }
+
