@@ -26,11 +26,47 @@ following class:
 The method `getMonthNumber()` must return an integer. And the
 assumption is the integer should lie on `[1 .. 12]` interval.
 
-So the idea of LSP is
+It's quite simple example, but that's enough to understand the idea of
+LSP:
 
-> a subclass of a class should derive its assumptions (properties) as well
+> A subclass of a class should derive its assumptions (properties) as well
 > as its methods and fields.
 
 It is important because then the class can be safely substituted by
 the subclass without violation correctness of the program (that's why
 it's called a substitution principle).
+
+    class Rectangle {
+      var width: Int;
+      var height: Int;
+
+      def getWidth: Int = {
+        return width;
+      }
+
+      def getHeight: Int = {
+        return height;
+      }
+
+      def setWidth(x : Int) = {
+        width = x;
+      }
+
+      def setHeight(x : Int) = {
+        height = x;
+      }
+    }
+
+foo
+
+    class Square extends Rectangle {
+      override def setWidget(x : Int) = {
+        width = x;
+        height = x;
+      }
+
+      override def setHeight(y : Int) = {
+        width = x;
+        height = x;
+      }
+    }
