@@ -3,7 +3,7 @@ author: rexim
 date: Sun, 15 Dec 2013 23:44:17 +0700
 
 <!-- OMG, markdown sucks! -->
-<!-- <img src="images/LSP.png" style="float: left; width: 50%; margin-right: 20px;" /> -->
+<img src="images/LSP.png" style="float: left; width: 50%; margin-right: 20px;" />
 
 The most mysterious [SOLID](http://en.wikipedia.org/wiki/SOLID)
 principle for me was always the third one. The
@@ -31,9 +31,9 @@ in compile time. We should provide it ourselves.
 It's pretty simple example, but I think it is enough to understand
 what property is and now we can formalize the idea of LSP:
 
-> a subclass of a class should derive its properties as well as its
-> methods and fields. So in the code an object of the class can be
-> safely substituted by an object of the subclass without violating
+> A subclass of a class should derive its properties as well as its
+> methods and fields. Thus an object of the class can be safely
+> substituted by an object of the subclass without violating
 > correctness of the program.
 
 Let's get back to the Square-Rectangle example. A square is actually a
