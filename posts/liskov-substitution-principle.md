@@ -28,17 +28,17 @@ is the integer should lie on the interval `[1 .. 12]`. As you can see,
 a property is something beyond method's signature. It can't be checked
 in compile time. We should provide it ourselves.
 
-It's a simple example, but I think it's enough to formalize the idea
-of LSP:
+It's pretty simple example, but I think it is enough to understand
+what property is and formalize the idea of LSP:
 
 > A subclass of a class should derive its properties as well as its
 > methods and fields. So in the code an object of the class can be
 > safely substituted by an object of the subclass without violating
 > correctness of the program.
 
-Let's get back to the Square-Rectangle example. A square is a
+Let's get back to the Square-Rectangle example. A square is actually a
 particular case of a rectangle. So `Rectangle` is a base class for
-`Square`. Let's define `Rectangle` as follow:
+`Square`. We can define it as follow:
 
     public class Rectangle {
         public void setWidth(int x) {
@@ -62,8 +62,11 @@ particular case of a rectangle. So `Rectangle` is a base class for
     }
 
 The class has two fields: `width` and `height`, and two setters and
-getters for them. A square is a rectangle with equal edges. This can
-be achived be overriding Rectangle's setters:
+getters for them.
+
+Now we can define `Square` class by extending the `Rectangle` class. A
+square is a rectangle with equal edges. This can be achived by
+overriding `Rectangle`'s setters:
 
     public class Square extends Rectangle {
         @Override
@@ -79,15 +82,16 @@ be achived be overriding Rectangle's setters:
         }
     }
 
-This approach has several problem. The first one is it's some sort of
-overhead to have width and height for Square since they're always
-equal. It would be better to have only length of edge.
+This approach has several problems. First of all, it is some sort of
+overhead to have `width` and `height` for `Square` since they're
+always equal. It would be better to have only one parameter which
+represents length of edge.
 
-The second problem is Square alters one of the Rectangle's
-properties. The property is setter changes only one
+The second problem is `Square` alters one of the `Rectangle`'s
+properties. `Rectangle`'s setters change only one
 parameter. `setWidget` changes only `width`, `setHeight` changes only
-`height`. But for Square every setter changes both parameters. The
-code which may use Rectangle probably doesn't even assume that. LSP
+`height`. But for `Square` every setter changes both parameters. The
+code which may use `Rectangle` probably doesn't even assume that. LSP
 has been violated!
 
-It is better to treat Rectangle and Square as different classes.
+It is better to treat `Rectangle` and `Square` as different classes.
