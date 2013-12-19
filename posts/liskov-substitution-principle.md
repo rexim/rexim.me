@@ -1,6 +1,6 @@
 title: Liskov Substitution Principle
 author: rexim
-date: Sun, 15 Dec 2013 23:44:17 +0700
+date: Thu, 19 Dec 2013 20:10:38 +0700
 
 <!-- OMG, markdown sucks! -->
 <img src="images/LSP.png" style="float: left; width: 50%; margin-right: 20px;" />
