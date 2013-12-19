@@ -29,9 +29,9 @@ a property is something beyond method's signature. It can't be checked
 in compile time. We should provide it ourselves.
 
 It's pretty simple example, but I think it is enough to understand
-what property is and formalize the idea of LSP:
+what property is and now we can formalize the idea of LSP:
 
-> A subclass of a class should derive its properties as well as its
+> a subclass of a class should derive its properties as well as its
 > methods and fields. So in the code an object of the class can be
 > safely substituted by an object of the subclass without violating
 > correctness of the program.
@@ -64,9 +64,9 @@ particular case of a rectangle. So `Rectangle` is a base class for
 The class has two fields: `width` and `height`, and two setters and
 getters for them.
 
-Now we can define `Square` class by extending the `Rectangle` class. A
-square is a rectangle with equal edges. This can be achived by
-overriding `Rectangle`'s setters:
+Now we can define `Square` class by extending `Rectangle`. A square is
+a rectangle with equal edges. This can be achived by overriding
+`Rectangle`'s setters:
 
     public class Square extends Rectangle {
         @Override
@@ -94,4 +94,4 @@ parameter. `setWidget` changes only `width`, `setHeight` changes only
 code which may use `Rectangle` probably doesn't even assume that. LSP
 has been violated!
 
-It is better to treat `Rectangle` and `Square` as different classes.
+It is better not to treat `Rectangle` as a base class of `Square`.
