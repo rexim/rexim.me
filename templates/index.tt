@@ -18,7 +18,7 @@
         <div>
           <a href="[% post.page_name %].html" class="archive-entry-title">[% post.title %]</a>
         </div>
-        <div class="archive-entry-duration duration">
+        <div class="archive-entry-duration duration" title="[% post.date %]">
           [% post.date %]
         </div>
       </div>

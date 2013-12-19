@@ -6,7 +6,7 @@
         <a class="post-title" href="[% page_name %].html">[% title %]</a>
       </div>
 
-      <div class="post-duration duration">
+      <div class="post-duration duration" title="[% date %]">
         [% date %]
       </div>
 
