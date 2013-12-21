@@ -93,4 +93,12 @@ foreach(@posts) {
     print "DONE\n";
 }
 
+print "sitemap.xml ... ";
+$template->process("./templates/sitemap.tt",
+                   { baseurl => 'http://rexim.me/',
+                     posts => \@posts },
+                   "./html/sitemap.xml",
+                   { binmode => ':utf8' }) || die $template->error();
+print "DONE\n";
+
 true;
