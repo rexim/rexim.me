@@ -6,10 +6,10 @@
 }
 
 @font-face {
-  font-family: 'Oxygen Mono';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Oxygen Mono'), local('OxygenMono-Regular'), url(../fonts/Oxygen-Mono.ttf) format('truetype');
+    font-family: 'Oxygen Mono';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Oxygen Mono'), local('OxygenMono-Regular'), url(../fonts/Oxygen-Mono.ttf) format('truetype');
 }
 
 .left-cell {
@@ -131,8 +131,6 @@ body {
     font-family: "Oxygen Mono";
     font-size: 14px;
     line-height: 1.5;
-    padding-left: 5px;
-    padding-right: 5px;
 }
 
 .splash {
@@ -151,7 +149,6 @@ body {
     color: #300;
     margin-top: 50px;
     text-align: center;
-    
 }
 
 .archive {
