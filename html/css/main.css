@@ -46,7 +46,7 @@ body {
 .header {
     margin-top: 30px;
     text-align: center;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.33);
 }
 
 .post {
@@ -54,7 +54,6 @@ body {
 }
 
 .post-header {
-    /* border-bottom: 1px solid #300; */
     text-align: center;
 }
 
@@ -80,12 +79,13 @@ body {
 }
 
 .post-content a {
-    color: #22f;
-    text-decoration: underline;
+    color: rgb(22, 22, 255);
+    border-bottom: 1px solid rgba(22, 22, 255, 0.33);
 }
 
 .post-content a:visited {
-    color: #226
+    color: rgb(22, 22, 66);
+    border-bottom: 1px solid rgba(22, 22, 66, 0.33);
 }
 
 .post-content p {
