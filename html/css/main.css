@@ -133,6 +133,15 @@ body {
     line-height: 1.5;
 }
 
+.post-content ul {
+    margin-top: 20px;
+    line-height: 1.5;
+}
+
+.post-content ul li {
+    list-style: circle inside;
+}
+
 .splash {
     margin-top: 20px;
     line-height: 1.5;
