@@ -1,6 +1,6 @@
 title: Algorithms and Data Structures
 author: rexim
-date: Sun, 29 Dec 2013 19:27:08 +0700
+date: Sun, 29 Dec 2013 22:47:35 +0700
 
 Here I'm going to collect the links to my posts about any algorithms
 and data structures. Even the simplest ones.
