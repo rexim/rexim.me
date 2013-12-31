@@ -1,5 +1,7 @@
 [% WRAPPER skeleton.tt
    title = 'Little Corner of the Internet'
+   description = 'This is just another personal blog about programming and and everything else'
+   author = 'rexim'
 %]
     <div class="splash post-content">
       <p>Hello and welcome to my little corner of the Internet! I am

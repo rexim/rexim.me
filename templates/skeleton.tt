@@ -2,9 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="author" content="Alexey Kutepov a.k.a. rexim" />
-    <meta name="description" content="This is just another personal blog about programming and and everything else." />
-    <meta name="keywords" content="blog,programming,emacs,c++,haskell,functional programming,object-oriented programming,algorithms,data structures" />
+    <meta name="author" content="[% author %]" />
+    <meta name="description" content="[% description %]" />
 
     <title>[% title %]</title>
 
