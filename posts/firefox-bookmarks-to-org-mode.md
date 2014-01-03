@@ -19,3 +19,16 @@ First of all, I need to export my current bookmarks from Firefox to
 org-mode document. Firefox allows us to export its bookmarks to a JSON
 document via the backup feature (`Bookmarks -> Show All Bookmarks ->
 Import and Backup -> Backup...`).
+
+The structure of the result JSON file is pretty obvious. It's a
+tree. Every node represents a folder or an actual bookmark (a leaf
+node). Also every node has several properties. The most useful at the
+moment are
+
+* `type` - determines the type of the node. The possible types we
+  interested in are `text/x-moz-place-container`, which is actually a
+  bookmark folder, and `text/x-moz-place`, which is just a bookmark;
+* `children` - a list of child node;
+* `uri` - URI to the bookmark's place; the nodes with type
+  `text/x-moz-place-container` usually don't have this property;
+* `title` - a title of bookmark folder or bookmark.
