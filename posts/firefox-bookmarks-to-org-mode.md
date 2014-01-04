@@ -1,7 +1,7 @@
-title: Export Firefox's Bookmarks to Org-Mode Document
+title: Export Bookmarks from Firefox to an Org-Mode Document
 author: rexim
 date: Fri, 03 Jan 2014 11:30:01 +0700
-description: Export Firefox's bookmarks to org-mode document
+description: Export bookmarks from Firefox to an org-mode document
 
 Recently I bought a laptop. And now I need to synchronize my
 web-browser's bookmarks between two devices: desktop and laptop. I use
@@ -18,7 +18,7 @@ the history of changes I've made.
 
 First of all, I need to export my current bookmarks from Firefox to an
 org-mode document. Firefox allows us to export its bookmarks to a JSON
-file via the backup feature (`Bookmarks -> Show All Bookmarks ->
+file with the backup feature (`Bookmarks -> Show All Bookmarks ->
 Import and Backup -> Backup...`).
 
 The structure of the JSON file is pretty obvious. It's a tree. Every
