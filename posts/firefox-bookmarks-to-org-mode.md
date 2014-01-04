@@ -1,6 +1,6 @@
 title: Export Bookmarks from Firefox to an Org-Mode Document
 author: rexim
-date: Fri, 03 Jan 2014 11:30:01 +0700
+date: Sun, 05 Jan 2014 00:42:22 +0700
 description: Export bookmarks from Firefox to an org-mode document
 
 Recently I bought a laptop. And now I need to synchronize my
