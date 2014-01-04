@@ -145,7 +145,7 @@ body {
 }
 
 .post-content ul li {
-    list-style: circle inside;
+    list-style: disc inside;
 }
 
 .splash {
