@@ -30,7 +30,7 @@
 
     <div class="footer">
       <div class="right-cell">
-        <span class="copyright">Copyright Bullshit &copy; 2013</span>
+        <span class="copyright">Copyright Bullshit &copy; 2014</span>
       </div>
       <div class="left-cell">
         <a id="email-button" class="fa fa-envelope contact-icon" data-email="cmV4aW1rdXRAZ21haWwuY29tCg==" href="mailto:{email}"></a>
