@@ -36,3 +36,7 @@ us are
 It's enough to write a simple program which parses the JSON,
 recursively traverses the tree and produces org-mode document.
 
+I wrote
+[a simple python script](https://gist.github.com/rexim/8257108) which
+does this. It reads the JSON from stdin and writes the org-mode
+document to stdout.
