@@ -3,11 +3,12 @@ author: rexim
 date: Sun, 05 Jan 2014 00:42:22 +0700
 description: Export bookmarks from Firefox to an org-mode document
 
-Recently I bought a laptop. And now I need to synchronize my
-web-browser's bookmarks between two devices: desktop and laptop. I use
-Mozilla Firefox most of the time. I read about Firefox Sync, but I
-didn't feel like I want to use it or any other similar service for the
-other web-browsers.
+I usually do everything on my desktop computer, but recently I
+purchased a new laptop (the old one I didn't use at all due to some
+hardware issues). And now I need to synchronize my internet bookmarks
+between two devices. I use Mozilla Firefox as a web-browser most of
+the time. And most of the bookmarks I store there. I read about
+Firefox Sync, but I don't feel like I want to use such services.
 
 I decided to try to store my bookmarks in an
 [org-mode](http://orgmode.org/) document. This approach has one
