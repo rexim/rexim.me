@@ -19,8 +19,8 @@ the history of changes I've made.
 
 First of all, I need to export my current bookmarks from Firefox to an
 org-mode document. Firefox allows us to export its bookmarks to a JSON
-file with the backup feature (`Bookmarks -> Show All Bookmarks ->
-Import and Backup -> Backup...`).
+file (`Bookmarks -> Show All Bookmarks -> Import and Backup ->
+Backup...`).
 
 The structure of the JSON file is pretty obvious. It's a tree. Every
 node of the tree represents a bookmark or a bookmark folder. Also
@@ -33,6 +33,47 @@ every node has several properties. The most important ones are
 * `uri` - URI to the bookmark's place; the nodes with the type
   `text/x-moz-place-container` usually don't have this property;
 * `title` - a title of a bookmark folder or a bookmark.
+
+With omitted unnecessary properties the JSON will look this:
+
+    {
+        "title": "Bookmarks Toolbar",
+        "type": "text/x-moz-place-container",
+        "children": [
+            {
+                "title": "Search Engines",
+                "type": "text/x-moz-place-container",
+                "children": [
+                    {
+                        "title": "Google",
+                        "type": "text/x-moz-place",
+                        "uri": "https://www.google.com/"
+                    },
+                    {
+                        "title": "Yandex",
+                        "type": "text/x-moz-place",
+                        "uri": "http://www.yandex.com/"
+                    }
+                ]
+            },
+            {
+                "title": "Social Networks",
+                "type": "text/x-moz-place-container",
+                "children": [
+                    {
+                        "title": "Twitter",
+                        "type": "text/x-moz-place",
+                        "uri": "https://twitter.com/"
+                    },
+                    {
+                        "title": "Welcome to Facebook",
+                        "type": "text/x-moz-place",
+                        "uri": "https://www.facebook.com/"
+                    }
+                ]
+            },
+        ]
+    }
 
 It's enough to write a simple program which parses the JSON,
 recursively traverses the tree and produces the org-mode document.
