@@ -21,6 +21,7 @@
         var disqus_shortname = 'reximme';
         var disqus_identifier = '/[% page_name %]';
         var disqus_title = '[% title %]';
+        var disqus_url = 'http://rexim.me/[% page_name %].html';
 
         (function() {
             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
