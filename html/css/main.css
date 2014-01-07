@@ -187,3 +187,7 @@ body {
 .contact-icon {
     color: black;
 }
+
+#disqus_thread {
+    margin-top: 50px;
+}
