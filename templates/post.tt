@@ -1,27 +1,27 @@
 [% WRAPPER skeleton.tt
-   title = title _ ' - Little Corner of the Internet'
-   description = description
-   author = author
+   title = post.title _ ' - Little Corner of the Internet'
+   description = post.description
+   author = post.author
 %]
     <div class="post">
       <div class="post-header">
-        <a class="post-title" href="/[% page_name %].html">[% title %]</a>
+        <a class="post-title" href="/[% post.page_name %].html">[% post.title %]</a>
       </div>
 
-      <div class="post-duration duration" title="[% date %]">
-        [% date %]
+      <div class="post-duration duration" title="[% post.date %]">
+        [% post.date %]
       </div>
 
       <div class="post-content">
-        [% content %]
+        [% post.content %]
       </div>
     </div>
     <div id="disqus_thread"></div>
     <script type="text/javascript">
         var disqus_shortname = 'reximme';
-        var disqus_identifier = '/[% page_name %]';
-        var disqus_title = '[% title %]';
-        var disqus_url = 'http://rexim.me/[% page_name %].html';
+        var disqus_identifier = '/[% post.page_name %]';
+        var disqus_title = '[% post.title %]';
+        var disqus_url = 'http://rexim.me/[% post.page_name %].html';
 
         (function() {
             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

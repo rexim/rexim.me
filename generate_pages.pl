@@ -87,7 +87,7 @@ foreach(@posts) {
     my $page_name = $_->{page_name};
     print "$page_name.html ... ";
     $template->process("./templates/post.tt",
-                       $_,
+                       { post => $_ },
                        "./html/$page_name.html",
                        { binmode => ':utf8' }) || die $template->error();
     print "DONE\n";
