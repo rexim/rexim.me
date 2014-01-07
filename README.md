@@ -32,6 +32,7 @@ Supported keys:
 * `title` - the title of the post;
 * `author` - who wrote the post;
 * `date` - when the post was published;
+* `description` - a brief description what the post is about;
 
 See `./posts/` directory for examples.
 
