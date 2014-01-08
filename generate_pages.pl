@@ -59,51 +59,55 @@ sub get_all_post_files {
     return \@posts;
 }
 
-my $post_file_names = get_all_post_files("./posts/");
-my @posts = ();
-my $template = Template->new({ RELATIVE => 1, INCLUDE_PATH => "./templates" });
-my $rfc3339 = DateTime::Format::RFC3339->new();
+sub main {
+    my $post_file_names = get_all_post_files("./posts/");
+    my @posts = ();
+    my $template = Template->new({ RELATIVE => 1, INCLUDE_PATH => "./templates" });
+    my $rfc3339 = DateTime::Format::RFC3339->new();
 
-foreach (@$post_file_names) {
-    my $page_name = basename $_, (".md");
-    my $post = parse_post_file($_);
-    my $date = DateTime::Format::Mail->parse_datetime($post->{date});
-    $date->set_formatter($rfc3339);
+    foreach (@$post_file_names) {
+        my $page_name = basename $_, (".md");
+        my $post = parse_post_file($_);
+        my $date = DateTime::Format::Mail->parse_datetime($post->{date});
+        $date->set_formatter($rfc3339);
 
-    $post->{content} = markdown($post->{content});
-    $post->{date} = $date;
-    $post->{page_name} = $page_name;
+        $post->{content} = markdown($post->{content});
+        $post->{date} = $date;
+        $post->{page_name} = $page_name;
 
-    push @posts, $post;
-}
+        push @posts, $post;
+    }
 
-@posts = sort {
-    DateTime->compare($b->{date}, $a->{date});
-} @posts;
+    @posts = sort {
+        DateTime->compare($b->{date}, $a->{date});
+    } @posts;
 
-print "index.html ... ";
-$template->process("./templates/index.tt",
-                   { posts => \@posts },
-                   "./html/index.html",
-                   { binmode => ':utf8' }) || die $template->error();
-print "DONE\n";
+    print "index.html ... ";
+    $template->process("./templates/index.tt",
+                       { posts => \@posts },
+                       "./html/index.html",
+                       { binmode => ':utf8' }) || die $template->error();
+    print "DONE\n";
 
-foreach(@posts) {
-    my $page_name = $_->{page_name};
-    print "$page_name.html ... ";
-    $template->process("./templates/post.tt",
-                       { post => $_ },
-                       "./html/$page_name.html",
+    foreach(@posts) {
+        my $page_name = $_->{page_name};
+        print "$page_name.html ... ";
+        $template->process("./templates/post.tt",
+                           { post => $_ },
+                           "./html/$page_name.html",
+                           { binmode => ':utf8' }) || die $template->error();
+        print "DONE\n";
+    }
+
+    print "sitemap.xml ... ";
+    $template->process("./templates/sitemap.tt",
+                       { baseurl => 'http://rexim.me/',
+                         posts => \@posts },
+                       "./html/sitemap.xml",
                        { binmode => ':utf8' }) || die $template->error();
     print "DONE\n";
 }
 
-print "sitemap.xml ... ";
-$template->process("./templates/sitemap.tt",
-                   { baseurl => 'http://rexim.me/',
-                     posts => \@posts },
-                   "./html/sitemap.xml",
-                   { binmode => ':utf8' }) || die $template->error();
-print "DONE\n";
+main();
 
 1;
