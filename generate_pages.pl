@@ -59,11 +59,10 @@ sub get_all_post_files {
     return \@posts;
 }
 
-sub main {
-    my $post_file_names = get_all_post_files("./posts/");
-    my @posts = ();
-    my $template = Template->new({ RELATIVE => 1, INCLUDE_PATH => "./templates" });
+sub prepare_posts {
+    my ($post_file_names) = @_;
     my $rfc3339 = DateTime::Format::RFC3339->new();
+    my @posts = ();
 
     foreach (@$post_file_names) {
         my $page_name = basename $_, (".md");
@@ -82,14 +81,21 @@ sub main {
         DateTime->compare($b->{date}, $a->{date});
     } @posts;
 
+    return \@posts;
+}
+
+sub main {
+    my $posts = prepare_posts(get_all_post_files("./posts/"));
+    my $template = Template->new({ RELATIVE => 1, INCLUDE_PATH => "./templates" });
+
     print "index.html ... ";
     $template->process("./templates/index.tt",
-                       { posts => \@posts },
+                       { posts => $posts },
                        "./html/index.html",
                        { binmode => ':utf8' }) || die $template->error();
     print "DONE\n";
 
-    foreach(@posts) {
+    foreach(@$posts) {
         my $page_name = $_->{page_name};
         print "$page_name.html ... ";
         $template->process("./templates/post.tt",
@@ -102,7 +108,7 @@ sub main {
     print "sitemap.xml ... ";
     $template->process("./templates/sitemap.tt",
                        { baseurl => 'http://rexim.me/',
-                         posts => \@posts },
+                         posts => $posts },
                        "./html/sitemap.xml",
                        { binmode => ':utf8' }) || die $template->error();
     print "DONE\n";
