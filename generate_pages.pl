@@ -1,5 +1,8 @@
 #!/usr/bin/env perl
 
+use strict;
+use warnings;
+
 use Data::Dumper;
 use DateTime;
 use DateTime::Format::RFC3339;
@@ -101,4 +104,4 @@ $template->process("./templates/sitemap.tt",
                    { binmode => ':utf8' }) || die $template->error();
 print "DONE\n";
 
-true;
+1;
