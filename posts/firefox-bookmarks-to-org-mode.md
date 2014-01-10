@@ -71,7 +71,7 @@ With omitted unnecessary properties the JSON will look this:
                         "uri": "https://www.facebook.com/"
                     }
                 ]
-            },
+            }
         ]
     }
 
