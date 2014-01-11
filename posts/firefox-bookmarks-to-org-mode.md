@@ -66,7 +66,7 @@ With the omitted unnecessary properties the JSON will look this:
                         "uri": "https://twitter.com/"
                     },
                     {
-                        "title": "Welcome to Facebook",
+                        "title": "Facebook",
                         "type": "text/x-moz-place",
                         "uri": "https://www.facebook.com/"
                     }
@@ -93,4 +93,4 @@ With the script the above JSON example will be converted to this:
        - [[http://www.yandex.com/][Yandex]]
     ** Social Networks
        - [[https://twitter.com/][Twitter]]
-       - [[https://www.facebook.com/][Welcome to Facebook]]
+       - [[https://www.facebook.com/][Facebook]]
