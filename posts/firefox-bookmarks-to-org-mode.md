@@ -34,7 +34,7 @@ every node has several properties. The most important ones are
   `text/x-moz-place-container` usually don't have this property;
 * `title` - a title of a bookmark folder or a bookmark.
 
-With omitted unnecessary properties the JSON will look this:
+With the omitted unnecessary properties the JSON will look this:
 
     {
         "title": "Bookmarks Toolbar",
@@ -84,3 +84,13 @@ does this. It reads the JSON from stdin and writes the org-mode
 document to stdout. It translates folders to
 [headlines](http://orgmode.org/manual/Headlines.html) and bookmarks to
 [list items](http://orgmode.org/manual/Plain-lists.html).
+
+With the script the above JSON example will be converted to this:
+
+    * Bookmarks Toolbar
+    ** Search Engines
+       - [[https://www.google.com/][Google]]
+       - [[http://www.yandex.com/][Yandex]]
+    ** Social Networks
+       - [[https://twitter.com/][Twitter]]
+       - [[https://www.facebook.com/][Welcome to Facebook]]
