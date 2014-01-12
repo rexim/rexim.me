@@ -84,11 +84,29 @@ sub prepare_posts {
     return \@posts;
 }
 
+sub settings_from_args {
+    my ($settings) = @_;
+    foreach (@ARGV) {
+        if ($_ eq '--comments-enabled') {
+            $settings->{comments_enabled} = 1;
+        } else {
+            die "$_ is unknown option\n";
+        }
+    }
+}
+
 sub main {
+    my $settings = {
+        comments_enabled => 0
+    };
+    settings_from_args($settings);
+
+    print Dumper($settings), "\n";
+
     my $posts = prepare_posts(get_all_post_files("./posts/"));
     my $template = Template->new({ RELATIVE => 1, INCLUDE_PATH => "./templates" });
 
-    print "index.html ... ";
+    print "[INFO] index.html ... ";
     $template->process("./templates/index.tt",
                        { posts => $posts },
                        "./html/index.html",
@@ -97,15 +115,16 @@ sub main {
 
     foreach(@$posts) {
         my $page_name = $_->{page_name};
-        print "$page_name.html ... ";
+        print "[INFO] $page_name.html ... ";
         $template->process("./templates/post.tt",
-                           { post => $_ },
+                           { post => $_,
+                             settings => $settings},
                            "./html/$page_name.html",
                            { binmode => ':utf8' }) || die $template->error();
         print "DONE\n";
     }
 
-    print "sitemap.xml ... ";
+    print "[INFO] sitemap.xml ... ";
     $template->process("./templates/sitemap.tt",
                        { baseurl => 'http://rexim.me/',
                          posts => $posts },
