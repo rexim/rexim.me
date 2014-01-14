@@ -4,6 +4,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="author" content="[% author %]" />
     <meta name="description" content="[% description %]" />
+  [% IF keywords %]
+    <meta name="keywords" content="[% keywords %]">
+  [% END %]
 
     <title>[% title %]</title>
 

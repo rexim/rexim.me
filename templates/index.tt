@@ -2,6 +2,7 @@
    title = 'Little Corner of the Internet'
    description = 'This is just another personal blog about programming and everything else'
    author = 'rexim'
+   keywords = 'blog,programming,functional programming,algorithms,data structures,emacs,rexim,mixer'
 %]
     <div class="splash post-content">
       <p>Hello and welcome to my little corner of the Internet! I am
