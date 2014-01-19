@@ -33,8 +33,23 @@ bound to those magic keys:
          url
          `(lambda (s)
             (goto-char (point-max))
-            (search-backward-regexp "<title>[[:space:]\n]*\\(.*\\)[[:space:]\n]*</title>")
+            (search-backward-regexp
+             "<title>[[:space:]\n]*\\(.*\\)[[:space:]\n]*</title>")
             (let ((title (match-string 1)))
               (with-current-buffer ,dest-buffer
                 (insert (format "[[%s][%s]]" ,url title))))))))
 
+This snippet has three key elements:
+
+1. `(substring-no-properties (current-kill 0))`  returns content
+   of the clipboard;
+2. function `url-retrieve` makes an HTTP-request to the given URL
+   &mdash; the request is asynchronous, so the function requires a
+   callback which is called when the result has been completely
+   retrieved, with the current buffer containing the result;
+3. function `search-backward-regexp` searches in the current buffer by
+   the given regexp, so I can extract the title of the web-page using
+   group capturing (see function `match-string`).
+
+The function works even on Windows. There is a little problem with
+unicode titles, but I'm going to solve it later.
