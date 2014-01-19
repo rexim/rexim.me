@@ -5,7 +5,7 @@
     <meta name="author" content="[% author %]" />
     <meta name="description" content="[% description %]" />
   [% IF keywords %]
-    <meta name="keywords" content="[% keywords %]">
+    <meta name="keywords" content="[% keywords %]" />
   [% END %]
 
     <title>[% title %]</title>
