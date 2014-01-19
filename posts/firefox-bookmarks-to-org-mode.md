@@ -26,13 +26,13 @@ The structure of the JSON file is pretty obvious. It's a tree. Every
 node of the tree represents a bookmark or a bookmark folder. Also
 every node has several properties. The most important ones are
 
-* `type` - determines the type of the node; the type
+* `type` &mdash; determines the type of the node; the type
   `text/x-moz-place-container` means it's a bookmark folder; the type
   `text/x-moz-place` means it's a bookmark;
-* `children` - a list of child nodes;
-* `uri` - URI to the bookmark's place; the nodes with the type
+* `children` &mdash; a list of child nodes;
+* `uri` &mdash; URI to the bookmark's place; the nodes with the type
   `text/x-moz-place-container` usually don't have this property;
-* `title` - a title of a bookmark folder or a bookmark.
+* `title` &mdash; a title of a bookmark folder or a bookmark.
 
 With the omitted unnecessary properties the JSON will look this:
 
