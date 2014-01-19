@@ -29,10 +29,10 @@ any whitespace above the metadata, and the metadata block ends with
 the first line which doesn't match the regexp.
 
 Supported keys:
-* `title` - the title of the post;
-* `author` - who wrote the post;
-* `date` - when the post was published;
-* `description` - what the post is about;
+* `title` &mdash; the title of the post;
+* `author` &mdash; who wrote the post;
+* `date` &mdash; when the post was published;
+* `description` &mdash; what the post is about;
 
 See `./posts/` directory for examples.
 
