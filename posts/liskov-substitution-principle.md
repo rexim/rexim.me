@@ -4,7 +4,9 @@ date: Thu, 19 Dec 2013 20:10:38 +0700
 description: A simple explanation of the Liskov Substitution Priciple
 
 <!-- OMG, markdown sucks! -->
-<img src="images/LSP.png" style="float: left; width: 50%; margin-right: 20px;" />
+<img src="images/LSP.png"
+     style="float: left; width: 50%; margin-right: 20px;"
+     alt="Lumpy Space Princess" />
 
 The most mysterious [SOLID](http://en.wikipedia.org/wiki/SOLID)
 principle for me was always the third one. The

@@ -5,7 +5,8 @@ description: Explains how to insert a link to an org-mode document by URL from t
 
 <!-- OMG, markdown sucks! -->
 <img src="images/emacs-deal-with-it.png"
-     style="float: left; width: 35%; margin-right: 20px;" />
+     style="float: left; width: 35%; margin-right: 20px;"
+     alt="Emacs deal with it" />
 
 After exporting my bookmarks
 [from Firefox to an org-mode document](/firefox-bookmarks-to-org-mode.html)
