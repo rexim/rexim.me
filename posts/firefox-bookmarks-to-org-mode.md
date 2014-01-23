@@ -1,7 +1,7 @@
 title: Export Bookmarks from Firefox to an Org-Mode Document
 author: rexim
 date: Sun, 05 Jan 2014 00:42:22 +0700
-description: Export bookmarks from Firefox to an org-mode document
+description: Export bookmarks from Mozilla Firefox to an org-mode document for Emacs
 
 I usually do everything on my desktop computer, but recently I
 purchased a new laptop (the old one I didn't use at all due to some
