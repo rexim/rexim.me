@@ -26,7 +26,7 @@ the URL. I needed this feature:
 That would be awesome! So I implemented this function which can be
 bound to those magic keys:
 
-    (defun insert-new-linnk ()
+    (defun insert-new-link ()
       (interactive)
       (let ((dest-buffer (current-buffer))
             (url (substring-no-properties (current-kill 0))))
@@ -54,3 +54,31 @@ This snippet has three key elements:
 
 The function works even on Windows. There is a little problem with
 unicode titles, but I'm going to solve it later.
+
+**UPD.** To make this function support UTF-8 titles we need to
+properly decode the data from the web-server. The `url-retrive`
+function returns the data in a buffer. To get the data as a string we
+need to use the `buffer-string` function. Then, using the
+`decode-coding-string` function we decode the string. To extract the
+title of the web-page from the decoded string we use `string-match`
+instead of `search-backward-regexp`. The improved version of the
+function looks like this:
+
+    (defun insert-new-link ()
+      (interactive)
+      (let ((dest-buffer (current-buffer))
+            (url (substring-no-properties (current-kill 0))))
+        (url-retrieve
+         url
+         `(lambda (s)
+            (let ((content (decode-coding-string (buffer-string) 'utf-8)))
+              (string-match "<title>[[:space:]\n]*\\(.*\\)[[:space:]\n]*</title>"
+                            content)
+              (let ((title (match-string 1 content)))
+                (with-current-buffer ,dest-buffer
+                  (insert (format "[[%s][%s]]" ,url title)))))))))
+
+There can be a problem with non-UTF-8 titles. To fix this we need to
+deduce which encoding is used by checking HTTP response headers and
+HTML meta tags. But I think such titles are pretty rare today. So I'm
+not going to waste my time on this.
