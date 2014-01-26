@@ -55,7 +55,7 @@ This snippet has three key elements:
 The function works even on Windows. There is a little problem with
 unicode titles, but I'm going to solve it later.
 
-**UPD.** To make this function support UTF-8 titles we need to
+**UPD:** To make this function support UTF-8 titles we need to
 properly decode the data from the web-server. The `url-retrive`
 function returns the data in a buffer. To get the data as a string we
 need to use the `buffer-string` function. Then, using the
