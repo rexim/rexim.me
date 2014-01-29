@@ -4,6 +4,7 @@ use 5.10.1;
 
 use strict;
 use warnings;
+use utf8;
 
 use Data::Dumper;
 use DateTime;
@@ -25,6 +26,7 @@ sub parse_post_file {
 
     my ($file_name) = @_;
     open(my $fh, $file_name);
+    binmode($fh, ':utf8');
     while (<$fh>) {
         if ($parse_state == METADATA) {
             if (my ($key, $value) = $_ =~ m/^\s*([a-zA-Z0-9_]+)\s*:\s*(.*)\s*$/) {
@@ -104,7 +106,9 @@ sub main {
     print Dumper($settings), "\n";
 
     my $posts = prepare_posts(get_all_post_files("./posts/"));
-    my $template = Template->new({ RELATIVE => 1, INCLUDE_PATH => "./templates" });
+    my $template = Template->new({ RELATIVE => 1,
+                                   INCLUDE_PATH => "./templates",
+                                   ENCODING => 'utf8' });
 
     print "[INFO] index.html ... ";
     $template->process("./templates/index.tt",
