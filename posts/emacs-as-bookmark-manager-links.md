@@ -27,3 +27,80 @@ this feature:
 That would be awesome! So I implemented this function which can be
 bound to those magic keys:
 
+    (defun rc/cliplink ()
+      ;; Of course, this function is interactive. :)
+      (interactive)
+      (let (;; Remembering the current buffer, 'cause it is a destination
+            ;; buffer we are inserting the result to.
+            (dest-buffer (current-buffer))
+            ;; Getting URL from the clipboard. Since it may contain
+            ;; some text properties we are using substring-no-properties
+            ;; function.
+            (url (substring-no-properties (current-kill 0))))
+        ;; Making a request to the URL
+        (url-retrieve
+         url
+         ;; Performing an action on the retrieved response from the server.
+         `(lambda (s)
+            (rc/perform-cliplink ,dest-buffer ,url
+                                 (buffer-string))))))
+
+As you can see, it's just a skeleton. The main work is done by
+function `rc/perform-cliplink`:
+
+    (defun rc/perform-cliplink (buffer url content)
+      (let* (;; Decoding the content
+             (decoded-content (decode-coding-string content 'utf-8))
+             ;; Extrating and preparing the title
+             (title (rc/prepare-cliplink-title
+                     (rc/extract-title-from-html decoded-content))))
+        ;; Inserting org-link
+        (with-current-buffer buffer
+          (insert (format "[[%s][%s]]" url title)))))
+
+Everything is clear except two functions: `rc/extract-title-from-html`
+and `rc/prepare-cliplink-title`. Let's have a look at the first one:
+
+    (defun rc/extract-title-from-html (html)
+      (let (;; Start index of the title
+            (start (string-match "<title>" html))
+            ;; End index of the title
+            (end (string-match "</title>" html))
+            ;; Amount of characters to skip the title tag
+            (chars-to-skip (length "<title>")))
+        ;; If title is found ...
+        (if (and start end (< start end))
+            ;; ... extract it and return
+            (substring html (+ start chars-to-skip) end)
+          nil)))
+
+The second function is a bit more complex:
+
+    (defun rc/prepare-cliplink-title (title)
+      (let (;; Regexps for replacing to make the title usable for org
+            ;; link. Can be extended.
+            (replace-table '(("\\[" . "{")
+                             ("\\]" . "}")
+                             ("&mdash;" . "—")))
+            ;; Maximum length of the title
+            (max-length 77)
+            ;; Removing redundant whitespaces from the title
+            (result (rc/straight-string title)))
+        ;; Applying replace table
+        (dolist (x replace-table)
+          (setq result (replace-regexp-in-string (car x) (cdr x) result)))
+        ;; Applying maximum length
+        (when (> (length result) max-length)
+          (setq result (concat (substring result 0 max-length) "...")))
+        ;; Returning result
+        result))
+
+So, the last function is `rc/straight-string` which helps us to remove
+redundant whitespace characters. Here is its implementation:
+
+    (defun rc/straight-string (s)
+      ;; Spliting the string and then concatenating it back does the work.
+      (mapconcat '(lambda (x) x) (split-string s) " "))
+
+So much code! I hope it is not too hard to read. I just wanted to show
+my entire train of thoughts.
