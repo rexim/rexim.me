@@ -1,7 +1,7 @@
 title: Emacs as a Bookmark Manager &mdash; Inserting New Links
 author: rexim
 date: Sun, 19 Jan 2014 14:05:43 +0700
-description: Explains how to insert a link to an org-mode document by URL from the clipboard.
+description: Convenient way to bookmark internet links in an org-mode document.
 
 <!-- OMG, markdown sucks! -->
 <img src="images/emacs-deal-with-it.png"
