@@ -49,12 +49,12 @@ As you can see, it's just a skeleton. The main work is done by
 function `rc/perform-cliplink`:
 
     (defun rc/perform-cliplink (buffer url content)
-      (let* (;; Decoding the content
+      (let* (;; Decoding the content from UTF-8.
              (decoded-content (decode-coding-string content 'utf-8))
-             ;; Extrating and preparing the title
+             ;; Extrating and preparing the title.
              (title (rc/prepare-cliplink-title
                      (rc/extract-title-from-html decoded-content))))
-        ;; Inserting org-link
+        ;; Inserting org-link.
         (with-current-buffer buffer
           (insert (format "[[%s][%s]]" url title)))))
 
@@ -62,15 +62,15 @@ Everything is clear except two functions: `rc/extract-title-from-html`
 and `rc/prepare-cliplink-title`. Let's have a look at the first one:
 
     (defun rc/extract-title-from-html (html)
-      (let (;; Start index of the title
+      (let (;; Start index of the title.
             (start (string-match "<title>" html))
-            ;; End index of the title
+            ;; End index of the title.
             (end (string-match "</title>" html))
-            ;; Amount of characters to skip the title tag
+            ;; Amount of characters to skip the openning title tag.
             (chars-to-skip (length "<title>")))
         ;; If title is found ...
         (if (and start end (< start end))
-            ;; ... extract it and return
+            ;; ... extract it and return.
             (substring html (+ start chars-to-skip) end)
           nil)))
 
@@ -82,7 +82,7 @@ The second function is a bit more complex:
             (replace-table '(("\\[" . "{")
                              ("\\]" . "}")
                              ("&mdash;" . "—")))
-            ;; Maximum length of the title
+            ;; Maximum length of the title.
             (max-length 77)
             ;; Removing redundant whitespaces from the title.
             (result (rc/straight-string title)))
@@ -92,14 +92,14 @@ The second function is a bit more complex:
         ;; Cutting off the title according to its maximum length.
         (when (> (length result) max-length)
           (setq result (concat (substring result 0 max-length) "...")))
-        ;; Returning result
+        ;; Returning result.
         result))
 
 So, the last function is `rc/straight-string` which helps us to remove
 redundant whitespace characters. Here is its implementation:
 
     (defun rc/straight-string (s)
-      ;; Spliting the string and then concatenating it back does the work.
+      ;; Spliting the string and then concatenating it back.
       (mapconcat '(lambda (x) x) (split-string s) " "))
 
 So much code! I hope it is not too hard to read. I just wanted to show
