@@ -103,4 +103,5 @@ redundant whitespace characters. Here is its implementation:
       (mapconcat '(lambda (x) x) (split-string s) " "))
 
 So much code! I hope it is not too hard to read. I just wanted to show
-my entire train of thoughts.
+my entire train of thoughts. I've put the complete code
+[here](https://gist.github.com/rexim/8883151).
