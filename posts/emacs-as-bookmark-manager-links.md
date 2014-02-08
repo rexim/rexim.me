@@ -1,6 +1,6 @@
 title: Emacs as a Bookmark Manager &mdash; Inserting New Links
 author: rexim
-date: Sun, 19 Jan 2014 14:05:43 +0700
+date: Sat, 08 Feb 2014 19:47:00 +0700
 description: Convenient way to bookmark internet links in an org-mode document.
 
 <!-- OMG, markdown sucks! -->
