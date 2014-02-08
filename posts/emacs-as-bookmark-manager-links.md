@@ -27,7 +27,7 @@ this feature:
 That would be awesome! So I implemented this function which can be
 bound to those magic keys:
 
-    (defun rc/cliplink ()
+    (defun cliplink ()
       ;; Of course, this function is interactive. :)
       (interactive)
       (let (;; Remembering the current buffer, 'cause it is a destination
@@ -42,26 +42,26 @@ bound to those magic keys:
          url
          ;; Performing an action on the retrieved content.
          `(lambda (s)
-            (rc/perform-cliplink ,dest-buffer ,url
-                                 (buffer-string))))))
+            (perform-cliplink ,dest-buffer ,url
+                              (buffer-string))))))
 
 As you can see, it's just a skeleton. The main work is done by
-function `rc/perform-cliplink`:
+function `perform-cliplink`:
 
-    (defun rc/perform-cliplink (buffer url content)
+    (defun perform-cliplink (buffer url content)
       (let* (;; Decoding the content from UTF-8.
              (decoded-content (decode-coding-string content 'utf-8))
              ;; Extrating and preparing the title.
-             (title (rc/prepare-cliplink-title
-                     (rc/extract-title-from-html decoded-content))))
+             (title (prepare-cliplink-title
+                     (extract-title-from-html decoded-content))))
         ;; Inserting org-link.
         (with-current-buffer buffer
           (insert (format "[[%s][%s]]" url title)))))
 
-Everything is clear except two functions: `rc/extract-title-from-html`
-and `rc/prepare-cliplink-title`. Let's have a look at the first one:
+Everything is clear except two functions: `extract-title-from-html`
+and `prepare-cliplink-title`. Let's have a look at the first one:
 
-    (defun rc/extract-title-from-html (html)
+    (defun extract-title-from-html (html)
       (let (;; Start index of the title.
             (start (string-match "<title>" html))
             ;; End index of the title.
@@ -76,7 +76,7 @@ and `rc/prepare-cliplink-title`. Let's have a look at the first one:
 
 The second function is a bit more complex:
 
-    (defun rc/prepare-cliplink-title (title)
+    (defun prepare-cliplink-title (title)
       (let (;; Table of replacements which make this title usable for
             ;; org-link. Can be extended.
             (replace-table '(("\\[" . "{")
@@ -85,7 +85,7 @@ The second function is a bit more complex:
             ;; Maximum length of the title.
             (max-length 77)
             ;; Removing redundant whitespaces from the title.
-            (result (rc/straight-string title)))
+            (result (straight-string title)))
         ;; Applying every element of the replace-table.
         (dolist (x replace-table)
           (setq result (replace-regexp-in-string (car x) (cdr x) result)))
@@ -95,10 +95,10 @@ The second function is a bit more complex:
         ;; Returning result.
         result))
 
-So, the last function is `rc/straight-string` which helps us to remove
+So, the last function is `straight-string` which helps us to remove
 redundant whitespace characters. Here is its implementation:
 
-    (defun rc/straight-string (s)
+    (defun straight-string (s)
       ;; Spliting the string and then concatenating it back.
       (mapconcat '(lambda (x) x) (split-string s) " "))
 
