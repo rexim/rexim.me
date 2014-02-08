@@ -31,16 +31,16 @@ bound to those magic keys:
       ;; Of course, this function is interactive. :)
       (interactive)
       (let (;; Remembering the current buffer, 'cause it is a destination
-            ;; buffer we are inserting the result to.
+            ;; buffer we are inserting the org-link to.
             (dest-buffer (current-buffer))
             ;; Getting URL from the clipboard. Since it may contain
             ;; some text properties we are using substring-no-properties
             ;; function.
             (url (substring-no-properties (current-kill 0))))
-        ;; Making a request to the URL
+        ;; Retrieving content by URL.
         (url-retrieve
          url
-         ;; Performing an action on the retrieved response from the server.
+         ;; Performing an action on the retrieved content.
          `(lambda (s)
             (rc/perform-cliplink ,dest-buffer ,url
                                  (buffer-string))))))
@@ -77,19 +77,19 @@ and `rc/prepare-cliplink-title`. Let's have a look at the first one:
 The second function is a bit more complex:
 
     (defun rc/prepare-cliplink-title (title)
-      (let (;; Regexps for replacing to make the title usable for org
-            ;; link. Can be extended.
+      (let (;; Table of replacements which make this title usable for
+            ;; org-link. Can be extended.
             (replace-table '(("\\[" . "{")
                              ("\\]" . "}")
                              ("&mdash;" . "—")))
             ;; Maximum length of the title
             (max-length 77)
-            ;; Removing redundant whitespaces from the title
+            ;; Removing redundant whitespaces from the title.
             (result (rc/straight-string title)))
-        ;; Applying replace table
+        ;; Applying every element of the replace-table.
         (dolist (x replace-table)
           (setq result (replace-regexp-in-string (car x) (cdr x) result)))
-        ;; Applying maximum length
+        ;; Cutting off the title according to its maximum length.
         (when (> (length result) max-length)
           (setq result (concat (substring result 0 max-length) "...")))
         ;; Returning result
