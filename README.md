@@ -2,8 +2,8 @@
 
 Source code of my blog at <http://rexim.me/>.
 
-**If you see any mistakes or typos, please, tell me about it. You can
-  even send me a pull request with a fix if you like. :)**
+**If you see any mistakes or typos, please, tell me about them. You
+  can even send me a pull request with a fix if you like. :)**
 
 ## Usage ##
 
