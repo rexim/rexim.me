@@ -25,9 +25,9 @@
     </script>
   </head>
   <body>
-    <div class="header">
+    <h1 class="header">
       <a class="logo-title" href="/">Little Corner of the Internet</a>
-    </div>
+    </h1>
 
     [% content %]
 

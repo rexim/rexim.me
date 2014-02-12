@@ -4,9 +4,9 @@
    author = post.author
 %]
     <div class="post">
-      <div class="post-header">
+      <h1 class="post-header">
         <a class="post-title" href="/[% post.page_name %].html">[% post.title %]</a>
-      </div>
+      </h1>
 
       <div class="post-duration duration" title="[% post.date %]">
         [% post.date %]
