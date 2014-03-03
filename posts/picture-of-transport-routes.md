@@ -10,7 +10,7 @@ work. I was contributing to a part of our infrastructure intended for
 searching the shortest paths on transport routes of a city.
 
 Building a route graph from the database is an expensive operation, so
-sometimes we cache it to a binary file. For a visual debug reason, I
+sometimes we cache it to a binary file. For a visual debug purpose, I
 created
 [this little utility](https://github.com/rexim/routes-drawer). It
 takes the binary file as an input, renders the graph, and dumps the
