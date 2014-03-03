@@ -186,6 +186,7 @@ body {
 
 .contact-icon {
     color: black;
+    margin-right: 5px;
 }
 
 #disqus_thread {

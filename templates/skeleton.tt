@@ -37,7 +37,8 @@
       </div>
       <div class="left-cell">
         <a id="email-button" class="fa fa-envelope contact-icon" data-email="cmV4aW1rdXRAZ21haWwuY29tCg==" href="mailto:{email}"></a>
-        <a class="fa fa-github-alt contact-icon" href="http://github.com/rexim"></a>
+        <a class="fa fa-github-alt contact-icon" href="https://github.com/rexim"></a>
+        <a class="fa fa-bitbucket contact-icon" href="https://bitbucket.org/rexim"></a>
       </div>
       <div class="clear"></div>
     </div>
