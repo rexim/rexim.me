@@ -8,11 +8,11 @@ Source code of my blog at <http://rexim.me/>.
 ## Usage ##
 
 The blog engine is pretty simple. You write posts in markdown with
-metadata (see `./post/` directory and Markdown Metadata
-section). Then run `./generate_pages.pl` script to generate static
-html pages. The script is written in Perl and requires some additional
-dependencies (see Dependencies section). And finally, use `./html/` as
-a root for web-server.
+metadata (see `./post/` directory and Markdown Metadata section). Then
+run `./generate_pages.pl` script to generate static HTML pages. The
+script is written in Perl and requires some additional dependencies
+(see Dependencies section). And finally, use `./html/` as a root for
+web-server.
 
 Before deploying on production, you can test the generated pages using
 python's Simple HTTP Server:
@@ -39,11 +39,21 @@ Supported keys:
 
 See `./posts/` directory for examples.
 
-# Dependencies #
+## Dependencies ##
 
 First of all, a Perl interpreter is required to run the
 `./generate_pages.pl` script. The script itself has additional
 dependencies (see the top of the script) which you can install through
 [CPAN](http://www.cpan.org/).
 
-The script has been tested only under Linux.
+The script has been tested only on Linux.
+
+## Deployment ##
+
+There is `./deploy.sh` script which helps me to copy the generated
+HTML pages to a place where the web-server expects them to see. If you
+want to use it too, you have to create `./deploy.config` file. Use
+`./deploy.config.example` as an example. All options should be
+self-explanatory. Then run `./deploy.sh` as root. Before doing that, I
+advise you to look into the script to get the idea of what it really
+does.
