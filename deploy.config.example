@@ -1,0 +1,3 @@
+BLOG_DIRECTORY=/var/www/html
+BLOG_USER=user
+BLOG_GROUP=group
