@@ -8,7 +8,7 @@ what came out:
 
 <img alt="Sitting Pony" src="/images/sitting-pony.svg" style="width: 70%;" />
 
-Never thought I could draw anything more complex than a circle. At the
+Never thought I could draw anything more complex than a circle. In the
 beginning was a simple pencil sketch:
 
 <img alt="Sitting Pony Sketch" src="/images/sitting-pony-sketch.png" style="width: 70%;"/>
