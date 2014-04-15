@@ -78,6 +78,10 @@ body {
     font-weight: bold;
 }
 
+.post-content em {
+    font-style: italic;
+}
+
 .post-content a {
     color: rgb(22, 22, 255);
     border-bottom: 1px solid rgba(22, 22, 255, 0.33);
