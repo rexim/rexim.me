@@ -1,6 +1,6 @@
 title: Transition Color
 author: rexim
-date: Fri, 04 Apr 2014 11:43:24 +0700
+date: Sat, 19 Apr 2014 20:20:06 +0700
 description: A post about transition color effect
 
 The cause of making this post was a simple desire to code something
