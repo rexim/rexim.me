@@ -55,4 +55,4 @@ deployment process. Setting up this script is pretty complex so I
 won't describe it here.
 
 In short, all you need is to copy file `./deploy.conf.example` to
-`/etc/deploy.conf`, customize it, and add deploy.sh script to crontab.
+`/etc/rexim.me/deploy.conf`, customize it, and add deploy.sh script to crontab.
