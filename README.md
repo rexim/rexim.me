@@ -53,3 +53,6 @@ The script has been tested only on Linux.
 There is `./deploy.sh` script which I use along with cron to automate
 deployment process. Setting up this script is pretty complex so I
 won't describe it here.
+
+In short, all you need is to copy file `./deploy.conf.example` to
+`/etc/deploy.conf`, customize it, and add deploy.sh script to crontab.
