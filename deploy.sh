@@ -48,7 +48,7 @@ exec 2>&1
 
 # Deploying
 cd "${BLOG_GIT_DIRECTORY}"                        || fail "Cannot cd to the git directory \"${BLOG_GIT_DIRECTORY}\""
-git fetch "${BLOG_GIT_REMOTE}"                    || fail "Cannot fetch the latest changes from the remove \"${BLOG_GIT_REMOTE}\""
+git fetch "${BLOG_GIT_REMOTE}"                    || fail "Cannot fetch the latest changes from the remote \"${BLOG_GIT_REMOTE}\""
 git diff --exit-code "${BLOG_GIT_BRANCH}" "${BLOG_GIT_REMOTE}/${BLOG_GIT_BRANCH}" > /dev/null && exit 0
 git merge "${BLOG_GIT_REMOTE}/${BLOG_GIT_BRANCH}" || fail "Cannot merge the latest changes to the branch \"${BLOG_GIT_BRANCH}\""
 ./generate_pages.pl                               || fail "Cannot generate the pages"
