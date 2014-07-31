@@ -8,7 +8,7 @@ Source code of my blog at <http://rexim.me/>.
 ## Usage ##
 
 The blog engine is pretty simple. You write posts in markdown with
-metadata (see `./post/` directory and Markdown Metadata section). Then
+metadata (see `./posts/` directory and Markdown Metadata section). Then
 run `./generate_pages.pl` script to generate static HTML pages. The
 script is written in Perl and requires some additional dependencies
 (see Dependencies section). And finally, use `./html/` as a root for
