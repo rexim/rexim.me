@@ -50,9 +50,10 @@ The script has been tested only on Linux.
 
 ## Deployment ##
 
-There is `./deploy.sh` script which I use along with cron to automate
-deployment process. Setting up this script is pretty complex so I
-won't describe it here.
-
-In short, all you need is to copy file `./deploy.conf.example` to
-`/etc/rexim.me/deploy.conf`, customize it, and add deploy.sh script to crontab.
+There is `./deploy.sh` script which helps me to copy the generated
+HTML pages to a place where the web-server expects them to see. If you
+want to use it too, you have to create `./deploy.config` file. Use
+`./deploy.config.example` as an example. All options should be
+self-explanatory. Then run `./deploy.sh` as root. Before doing that, I
+advise you to look into the script to get the idea of what it really
+does.
