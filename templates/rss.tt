@@ -9,9 +9,9 @@
  
 [% FOR post IN posts %]
     <item>
-      <title>[% post.title %]</title>
+      <title><![CDATA[[% post.title %]]]></title>
       <link>[% baseurl %][% post.page_name %].html</link>
-      <description>[% post.description %]</description>
+      <description><![CDATA[[% post.description %]]]></description>
       <pubDate>[% post.date %]</pubDate>
       <guid>[% baseurl %][% post.page_name %]</guid>
     </item>
