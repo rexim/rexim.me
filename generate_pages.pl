@@ -135,6 +135,15 @@ sub main {
                        "./html/sitemap.xml",
                        { binmode => ':utf8' }) || die $template->error();
     print "DONE\n";
+
+    print "[INFO] rss.xml ... ";
+    $template->process("./templates/rss.tt",
+                       { baseurl => 'http://rexim.me/',
+                         posts => $posts },
+                       "./html/rss.xml",
+                       { binmode => ':utf8' }) || die $template->error();
+
+    print "DONE\n";
 }
 
 main();

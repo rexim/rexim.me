@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+  <channel>
+    <title>Little Corner of the Internet</title>
+    <link>http://rexim.me/</link>
+    <description>Little Corner of the Internet</description>
+    <language>en-us</language>
+    <pubDate>Sat, 16 Aug 2014 23:05:48 +0700</pubDate>
+ 
+[% FOR post IN posts %]
+    <item>
+      <title>[% post.title %]</title>
+      <link>[% baseurl %][% post.page_name %].html</link>
+      <description>[% post.description %]</description>
+      <pubDate>[% post.date %]</pubDate>
+      <guid>[% baseurl %][% post.page_name %]</guid>
+    </item>
+[% END %]
+  </channel>
+</rss>
