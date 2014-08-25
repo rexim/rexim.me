@@ -24,8 +24,8 @@ python's Simple HTTP Server:
 ## Markdown Metadata ##
 
 The `generate_pages.pl` uses metadata within markdown
-document. Metadata is a key-value table at the top of a markdown
-documented. Every row of the table matches
+document. Metadata is a key-value table at the top of a document.
+Every row of the table matches
 `^\s*([a-zA-Z0-9_]+)\s*:\s*(.*)\s*$`. The key is the text before the
 colon, and the value is the text after the colon. There must not be
 any whitespace above the metadata, and the metadata block ends with
