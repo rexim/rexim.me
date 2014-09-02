@@ -3,8 +3,8 @@ author: rexim
 date: Sun, 29 Dec 2013 22:47:35 +0700
 description: A collection of links to posts about algorithms and data structures
 
-Here I'm going to collect the links to my posts about any algorithms
-and data structures. Even the simplest ones.
+Here I'm going to collect the links to my posts about various
+algorithms and data structures. Even the simplest ones.
 
 I actually believe in immortality of algorithms and data
 structures. New technologies and programming languages are being
