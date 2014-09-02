@@ -7,9 +7,9 @@ Here I'm going to collect the links to my posts about various
 algorithms and data structures. Even the simplest ones.
 
 I actually believe in immortality of algorithms and data
-structures. New technologies and programming languages are being
-created and dying every day. On the other hand, algorithms and data
-structures usually live a very long life. For example, the
+structures. Technologies and programming languages are born and die
+every day. On the other hand, algorithms and data structures usually
+live a very long life. For example, the
 [Euclidean algorithm](http://en.wikipedia.org/wiki/Euclidean_algorithm)
 was invented in 300 BC and still remains in use.
 
