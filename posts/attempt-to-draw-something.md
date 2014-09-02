@@ -13,6 +13,6 @@ beginning was a simple pencil sketch:
 
 <img alt="Sitting Pony Sketch" src="/images/sitting-pony-sketch.png" style="width: 70%;"/>
 
-Which I scanned and then manually vectorized using
+I scanned it and then manually vectorized using
 [Inkscape](http://www.inkscape.org/). I would like to colorize the
 drawing. But not yet. Maybe a little bit later.
