@@ -110,40 +110,33 @@ sub main {
                                    INCLUDE_PATH => "./templates",
                                    ENCODING => 'utf8' });
 
-    print "[INFO] index.html ... ";
-    $template->process("./templates/index.tt",
-                       { posts => $posts },
-                       "./html/index.html",
-                       { binmode => ':utf8' }) || die $template->error();
-    print "DONE\n";
+    my $generate_file = sub {
+        my ($file_name, $template_name, $context) = @_;
+
+        if (not defined $context) {
+            $context = { posts => $posts,
+                         baseurl => "http://rexim.me/",
+                         settings => $settings };
+        }
+
+        print "[INFO] $file_name ...";
+        $template->process("./templates/$template_name",
+                           $context,
+                           "./html/$file_name",
+                           { binmode => ':utf8' }) || die $template->error();
+        print "DONE\n";
+    };
+
+    $generate_file->("index.html", "index.tt");
+    $generate_file->("sitemap.xml", "sitemap.tt");
+    $generate_file->("rss.xml", "rss.tt");
 
     foreach(@$posts) {
         my $page_name = $_->{page_name};
-        print "[INFO] $page_name.html ... ";
-        $template->process("./templates/post.tt",
-                           { post => $_,
-                             settings => $settings},
-                           "./html/$page_name.html",
-                           { binmode => ':utf8' }) || die $template->error();
-        print "DONE\n";
+        $generate_file->("$page_name.html", "post.tt",
+                         { post => $_,
+                           settings => $settings});
     }
-
-    print "[INFO] sitemap.xml ... ";
-    $template->process("./templates/sitemap.tt",
-                       { baseurl => 'http://rexim.me/',
-                         posts => $posts },
-                       "./html/sitemap.xml",
-                       { binmode => ':utf8' }) || die $template->error();
-    print "DONE\n";
-
-    print "[INFO] rss.xml ... ";
-    $template->process("./templates/rss.tt",
-                       { baseurl => 'http://rexim.me/',
-                         posts => $posts },
-                       "./html/rss.xml",
-                       { binmode => ':utf8' }) || die $template->error();
-
-    print "DONE\n";
 }
 
 main();
