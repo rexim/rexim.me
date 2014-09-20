@@ -76,7 +76,7 @@ With some properties omitted, the JSON looks like this:
     }
 
 It's enough to write a simple program which parses the JSON,
-recursively traverses the tree and produces the org-mode document.
+recursively traverses the tree and produces an org-mode document.
 
 I wrote
 [a simple python script](https://gist.github.com/rexim/8257108) which
