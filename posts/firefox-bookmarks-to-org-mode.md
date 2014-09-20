@@ -14,8 +14,8 @@ I decided to try to store my bookmarks in an
 [org-mode](http://orgmode.org/) document. This approach has one
 significant advantage for me: an org-mode document is a text document,
 so it can be easily put under the version control. And the version
-control allows me to synchronize information between devices and keeps
-the history of changes I've made.
+control enables me to synchronize information between devices and
+keeps the history of changes I've made.
 
 First of all, I need to export my current bookmarks from Firefox to an
 org-mode document. Firefox allows us to export its bookmarks to a JSON
