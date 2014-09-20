@@ -34,7 +34,7 @@ every node has several properties. The most important ones are:
   `text/x-moz-place-container` usually don't have this property;
 * `title` &mdash; a title of a bookmark folder or a bookmark.
 
-With the omitted unnecessary properties the JSON will look this:
+With some properties omitted, the JSON looks like this:
 
     {
         "title": "Bookmarks Toolbar",
