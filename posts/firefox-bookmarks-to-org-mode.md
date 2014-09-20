@@ -17,7 +17,7 @@ so it can be easily put under the version control. And the version
 control enables me to synchronize information between devices and
 keeps the history of changes I've made.
 
-First of all, I need to export my current bookmarks from Firefox to an
+First of all, I had to export my current bookmarks from Firefox to an
 org-mode document. Firefox allows us to export its bookmarks to a JSON
 file (`Bookmarks -> Show All Bookmarks -> Import and Backup ->
 Backup...`).
