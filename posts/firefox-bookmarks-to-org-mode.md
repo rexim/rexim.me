@@ -30,7 +30,7 @@ every node has several properties. The most important ones are:
   `text/x-moz-place-container` means it's a bookmark folder; the type
   `text/x-moz-place` means it's a bookmark;
 * `children` &mdash; a list of child nodes;
-* `uri` &mdash; URI to the bookmark's place; the nodes with the type
+* `uri` &mdash; bookmarked URI; the nodes with the type
   `text/x-moz-place-container` usually don't have this property;
 * `title` &mdash; a title of a bookmark folder or a bookmark.
 
