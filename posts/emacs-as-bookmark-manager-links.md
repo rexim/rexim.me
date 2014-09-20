@@ -46,7 +46,7 @@ to those magic keys:
                               (buffer-string))))))
 
 As you can see, it's just a skeleton. The main work is done by
-function `perform-cliplink`:
+`perform-cliplink` function:
 
     (defun perform-cliplink (buffer url content)
       (let* (;; Decoding the content from UTF-8.
