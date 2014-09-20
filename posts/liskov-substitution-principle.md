@@ -1,7 +1,7 @@
 title: Liskov Substitution Principle
 author: rexim
 date: Thu, 19 Dec 2013 20:10:38 +0700
-description: A simple explanation of the Liskov Substitution Priciple
+description: A simple explanation of the Liskov Substitution Priciple.
 
 <!-- OMG, markdown sucks! -->
 <img src="images/LSP.png"

@@ -15,17 +15,17 @@ I realized that I needed to automate some things. I didn't want to
 just insert new URLs to the org-mode document. I&nbsp;wanted to insert
 them as the org-mode
 [links](http://orgmode.org/manual/Link-format.html) with informative
-description (for example, with the title of the web-page). Apparently,
-it is more complex than just `CTRL+C` and then `CTRL+V` the URL. I
-needed this feature:
+descriptions (for example, the title of the web-page). Apparently, it
+is more complex than just `CTRL+C` and then `CTRL+V` the URL. I wanted
+the following:
 
 1. I copy a URL to the clipboard,
 2. switch to the Emacs window,
 3. press some magic keys,
 4. and Emacs inserts `[[URL][title of the web-page]]`.
 
-That would be awesome! So I implemented this function which can be
-bound to those magic keys:
+That would be awesome! So I implemented a function which can be bound
+to those magic keys:
 
     (defun cliplink ()
       ;; Of course, this function is interactive. :)
@@ -46,7 +46,7 @@ bound to those magic keys:
                               (buffer-string))))))
 
 As you can see, it's just a skeleton. The main work is done by
-function `perform-cliplink`:
+`perform-cliplink` function:
 
     (defun perform-cliplink (buffer url content)
       (let* (;; Decoding the content from UTF-8.
