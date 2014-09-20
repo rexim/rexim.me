@@ -1,7 +1,7 @@
 title: An Attempt to Draw Something
 author: rexim
 date: Thu, 13 Mar 2014 23:25:59 +0700
-description: Just a little try to draw something
+description: Just a little try to draw something.
 
 In the yesterday's evening I was trying to draw something. And that's
 what came out:
