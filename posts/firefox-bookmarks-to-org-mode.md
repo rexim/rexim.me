@@ -24,7 +24,7 @@ Backup...`).
 
 The structure of the JSON file is pretty obvious. It's a tree. Every
 node of the tree represents a bookmark or a bookmark folder. Also
-every node has several properties. The most important ones are
+every node has several properties. The most important ones are:
 
 * `type` &mdash; determines the type of the node; the type
   `text/x-moz-place-container` means it's a bookmark folder; the type
