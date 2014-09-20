@@ -85,7 +85,8 @@ document to stdout. It translates folders to
 [headlines](http://orgmode.org/manual/Headlines.html) and bookmarks to
 [list items](http://orgmode.org/manual/Plain-lists.html).
 
-With the script the above JSON example will be converted to this:
+The script will convert the above JSON into the following org-mode
+document:
 
     * Bookmarks Toolbar
     ** Search Engines
