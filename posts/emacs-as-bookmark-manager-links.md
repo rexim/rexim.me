@@ -24,8 +24,8 @@ the following:
 3. press some magic keys,
 4. and Emacs inserts `[[URL][title of the web-page]]`.
 
-That would be awesome! So I implemented this function which can be
-bound to those magic keys:
+That would be awesome! So I implemented a function which can be bound
+to those magic keys:
 
     (defun cliplink ()
       ;; Of course, this function is interactive. :)
