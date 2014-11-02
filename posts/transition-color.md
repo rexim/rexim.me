@@ -3,7 +3,7 @@ author: rexim
 date: Sat, 19 Apr 2014 20:20:06 +0700
 description: A post about transition color effect.
 
-The cause of making this post was a simple desire to code something
+The reason to write this post was a simple desire to code something
 and write about it :)
 
 So, the task is to implement transition color effect. We have to make
