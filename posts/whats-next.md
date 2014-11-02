@@ -19,9 +19,9 @@ Almost 4 months ago I moved to
 [Novosibirsk](http://en.wikipedia.org/wiki/Novosibirsk). It is not too
 far from my previous location
 ([Novokuznetsk](http://en.wikipedia.org/wiki/Novokuznetsk), almost 400
-kilometers) but still. :) There were many reasons for this. I'm not
-going to describe all of them, just a couple of which I find the most
-important for me.
+kilometers away) but still. :) There were many reasons for this. I'm
+not going to describe all of them, just a couple of which I find the
+most important for me.
 
 The first reason is there are very few good software development
 companies in Novokuznetsk. There is [4geo](http://4geo.ru) and this is
