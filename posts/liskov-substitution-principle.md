@@ -26,10 +26,10 @@ example the following class:
       ...
     }
 
-The method `getMonthNumber()` must return an integer. And the property
-is the integer should lie on the interval `[1 .. 12]`. As you can see,
-a property is something beyond method's signature. It can't be checked
-in compile time. We should provide it ourselves.
+The method `getMonthNumber()` must return an integer that has a
+property of lying on the interval `[1 .. 12]`. As you can see, a
+property is something beyond method's signature. It can't be checked
+at compile time. We should enforce it ourselves.
 
 It's pretty simple example, but I think it is enough to understand
 what property is and now we can formalize the idea of LSP:
