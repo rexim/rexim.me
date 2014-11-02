@@ -14,11 +14,11 @@ principle for me was always the third one. The
 (LSP). I knew that classical example about deriving Square from
 Rectangle, but I didn't understand why it is violation of LSP.
 
-The principle has a pretty simple idea. A class is not just a set of
-methods and fields. We also have a number of assumptions about
-them. These assumptions are often called properties. And when we use
-the class somewhere we usually rely on this properties. Let's consider
-as an example the following class:
+The principle has a pretty simple idea. A class is not simply a set of
+methods and fields, there is also a number of assumptions about
+them. These are often called properties. And when we use the class
+somewhere we usually rely on these properties. Let's consider as an
+example the following class:
 
     public class Date {
       ...
