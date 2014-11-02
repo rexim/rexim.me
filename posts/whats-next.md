@@ -47,7 +47,7 @@ starting your own one. I have an idea for a project, but I need to
 prepare my theoretical background for it.
 
 Sometimes I make small contributions to
-[Horta](https://github.com/codingteam/horta-hell/) and want finally to
-start learning how to draw. I really miss my musical instruments
-playings (especially night ones with a MIDI-keyboard, which I'm not
-able to bring here yet). But vocal percussion saves the situation. :)
+[Horta](https://github.com/codingteam/horta-hell/) and want to learn
+how to draw. I really miss my musical instruments playings (especially
+night ones with a MIDI-keyboard, which I'm not able to bring here
+yet). But vocal percussion saves the situation. :)
