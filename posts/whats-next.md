@@ -23,15 +23,15 @@ kilometers away) but still. :) There were many reasons for this. I'm
 not going to describe all of them, just a couple that I consider the
 most important for me.
 
-The first reason is there are very few good software development
+The first reason is that there are very few good software development
 companies in Novokuznetsk. There is [4geo](http://4geo.ru) and this is
 probably the only choice you have if you want to learn something as a
 software developer. In contrast, Novosibirsk (especially
 [Akademgorodok](http://en.wikipedia.org/wiki/Akademgorodok)) is a huge
 hub of awesome IT and software companies.
 
-The second reason is I really love Akademgorodok. I started to love it
-when I was a student and participated in different programming
+The second reason is that I really love Akademgorodok. I started to
+love it when I was a student and participated in different programming
 contests and activities there. I had met many nice and smart people,
 so I decided that I want to live there.
 
