@@ -20,7 +20,7 @@ Almost 4 months ago I moved to
 far from my previous location
 ([Novokuznetsk](http://en.wikipedia.org/wiki/Novokuznetsk), almost 400
 kilometers away) but still. :) There were many reasons for this. I'm
-not going to describe all of them, just a couple of which I find the
+not going to describe all of them, just a couple that I consider the
 most important for me.
 
 The first reason is there are very few good software development
