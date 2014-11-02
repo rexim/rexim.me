@@ -14,11 +14,11 @@ principle for me was always the third one. The
 (LSP). I knew that classical example about deriving Square from
 Rectangle, but I didn't understand why it is violation of LSP.
 
-The principle has a pretty simple idea. A class is not just a set of
-methods and fields. We also have a number of assumptions about
-them. These assumptions are often called properties. And when we use
-the class somewhere we usually rely on this properties. Let's consider
-as an example the following class:
+The principle has a pretty simple idea. A class is not simply a set of
+methods and fields, there is also a number of assumptions about
+them. These are often called properties. And when we use the class
+somewhere we usually rely on these properties. Let's consider as an
+example the following class:
 
     public class Date {
       ...
@@ -26,13 +26,13 @@ as an example the following class:
       ...
     }
 
-The method `getMonthNumber()` must return an integer. And the property
-is the integer should lie on the interval `[1 .. 12]`. As you can see,
-a property is something beyond method's signature. It can't be checked
-in compile time. We should provide it ourselves.
+The method `getMonthNumber()` must return an integer that has a
+property of lying on the interval `[1 .. 12]`. As you can see, a
+property is something beyond method's signature. It can't be checked
+at compile time. We should enforce it ourselves.
 
 It's pretty simple example, but I think it is enough to understand
-what property is and now we can formalize the idea of LSP:
+what property is. Now we can formalize the idea of LSP:
 
 > A subclass of a class should derive its properties as well as its
 > methods and fields. Thus an object of the class can be safely
@@ -41,7 +41,7 @@ what property is and now we can formalize the idea of LSP:
 
 Let's get back to the Square-Rectangle example. A square is actually a
 particular case of a rectangle. So `Rectangle` is a base class for
-`Square`. We can define it as follow:
+`Square`. We can define it as follows:
 
     public class Rectangle {
         public void setWidth(int x) {
@@ -68,7 +68,7 @@ The class has two fields: `width` and `height`, and two setters and
 getters for them.
 
 Now we can define `Square` class by extending `Rectangle`. A square is
-a rectangle with equal edges. This can be achived by overriding
+a rectangle with equal sides. This can be achived by overriding
 `Rectangle`'s setters:
 
     public class Square extends Rectangle {
