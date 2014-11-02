@@ -1,7 +1,7 @@
 title: The Picture of City Routes
 author: rexim
 date: Sun, 02 Mar 2014 16:16:49 +0700
-description: A post about one interesting task I was doing at my job.
+description: A post about one interesting task I was doing at work.
 
 I was participating in development of our local directory of
 organizations with a city map like [2gis](http://2gis.com/). My last
