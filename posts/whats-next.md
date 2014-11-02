@@ -19,19 +19,19 @@ Almost 4 months ago I moved to
 [Novosibirsk](http://en.wikipedia.org/wiki/Novosibirsk). It is not too
 far from my previous location
 ([Novokuznetsk](http://en.wikipedia.org/wiki/Novokuznetsk), almost 400
-kilometers) but still. :) There were many reasons for this. I'm not
-going to describe all of them, just a couple of which I find the most
-important for me.
+kilometers away) but still. :) There were many reasons for this. I'm
+not going to describe all of them, just a couple that I consider the
+most important for me.
 
-The first reason is there are very few good software development
+The first reason is that there are very few good software development
 companies in Novokuznetsk. There is [4geo](http://4geo.ru) and this is
 probably the only choice you have if you want to learn something as a
 software developer. In contrast, Novosibirsk (especially
 [Akademgorodok](http://en.wikipedia.org/wiki/Akademgorodok)) is a huge
 hub of awesome IT and software companies.
 
-The second reason is I really love Akademgorodok. I started to love it
-when I was a student and participated in different programming
+The second reason is that I really love Akademgorodok. I started to
+love it when I was a student and participated in different programming
 contests and activities there. I had met many nice and smart people,
 so I decided that I want to live there.
 
@@ -47,7 +47,7 @@ starting your own one. I have an idea for a project, but I need to
 prepare my theoretical background for it.
 
 Sometimes I make small contributions to
-[Horta](https://github.com/codingteam/horta-hell/) and want finally to
-start learning how to draw. I really miss my musical instruments
-playings (especially night ones with a MIDI-keyboard, which I'm not
-able to bring here yet). But vocal percussion saves the situation. :)
+[Horta](https://github.com/codingteam/horta-hell/) and want to learn
+how to draw. I really miss my musical instruments playings (especially
+night ones with a MIDI-keyboard, which I'm not able to bring here
+yet). But vocal percussion saves the situation. :)
