@@ -48,7 +48,7 @@ B_i = B_S + F_i \cdot (B_T - B_S);
 $$
 
 To make the transition color effect we are just walking through the
-$N$ transition steps until $W_i \ne T$. This can be easily implemented
+$N$ transition steps until $W_i \eq T$. This can be easily implemented
 as a computer
 algorithm. [Here](https://github.com/rexim/transition-color) is my
 implementation. Let's take a look at the screenshot of the UI:
