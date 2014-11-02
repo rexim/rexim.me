@@ -32,7 +32,7 @@ property is something beyond method's signature. It can't be checked
 at compile time. We should enforce it ourselves.
 
 It's pretty simple example, but I think it is enough to understand
-what property is and now we can formalize the idea of LSP:
+what property is. Now we can formalize the idea of LSP:
 
 > A subclass of a class should derive its properties as well as its
 > methods and fields. Thus an object of the class can be safely
@@ -41,7 +41,7 @@ what property is and now we can formalize the idea of LSP:
 
 Let's get back to the Square-Rectangle example. A square is actually a
 particular case of a rectangle. So `Rectangle` is a base class for
-`Square`. We can define it as follow:
+`Square`. We can define it as follows:
 
     public class Rectangle {
         public void setWidth(int x) {
@@ -68,7 +68,7 @@ The class has two fields: `width` and `height`, and two setters and
 getters for them.
 
 Now we can define `Square` class by extending `Rectangle`. A square is
-a rectangle with equal edges. This can be achived by overriding
+a rectangle with equal sides. This can be achived by overriding
 `Rectangle`'s setters:
 
     public class Square extends Rectangle {
