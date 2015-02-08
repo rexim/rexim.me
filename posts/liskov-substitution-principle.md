@@ -5,7 +5,8 @@ description: A simple explanation of the Liskov Substitution Priciple.
 
 <!-- OMG, markdown sucks! -->
 <img src="images/LSP.png"
-     style="float: left; width: 50%; margin-right: 20px;"
+     class="left-float-img"
+     style="width: 50%;"
      alt="Lumpy Space Princess" />
 
 The most mysterious [SOLID](http://en.wikipedia.org/wiki/SOLID)

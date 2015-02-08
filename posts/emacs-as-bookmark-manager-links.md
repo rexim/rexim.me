@@ -5,7 +5,8 @@ description: Convenient way to bookmark internet links in an org-mode document.
 
 <!-- OMG, markdown sucks! -->
 <img src="images/emacs-deal-with-it.png"
-     style="float: left; width: 38%; margin-right: 20px;"
+     class="left-float-img"
+     style="width: 38%;"
      alt="Emacs deal with it" />
 
 After exporting my bookmarks

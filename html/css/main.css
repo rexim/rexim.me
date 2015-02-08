@@ -196,3 +196,13 @@ body {
 #disqus_thread {
     margin-top: 50px;
 }
+
+.left-float-img {
+    float: left;
+    margin-right: 20px;
+}
+
+.right-float-img {
+    float: right;
+    margin-left: 20px;
+}

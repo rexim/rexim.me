@@ -5,7 +5,8 @@ description: What's next?
 
 <!-- OMG, markdown sucks! -->
 <img src="/images/rexim-thinking.png"
-     style="float: left; width: 150px; margin-right: 20px;"
+     class="left-float-img"
+     style="width: 150px;"
      alt="rexim thinking" />
 
 I wanted to write this post a long time ago, but most of the time I
