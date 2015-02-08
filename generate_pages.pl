@@ -6,6 +6,7 @@ use strict;
 use warnings;
 use utf8;
 
+use File::Copy::Recursive qw(dircopy);
 use Data::Dumper;
 use DateTime;
 use DateTime::Format::RFC3339;
@@ -104,6 +105,12 @@ sub main {
     settings_from_args($settings);
 
     print Dumper($settings), "\n";
+
+    if (-d "./html/") {
+        rmdir("./html/");
+    }
+
+    dircopy("./assets/", "./html/");
 
     my $posts = prepare_posts(get_all_post_files("./posts/"));
     my $template = Template->new({ RELATIVE => 1,
