@@ -28,3 +28,10 @@ Actually it would be nice to have this solution as a part of my
 config. Something like, when the OS is Windows just `setenv` the HOME
 variable to the correct place. I'll check if this works when I have
 spare time.
+
+**UPD.** No, we can't just do that. When Emacs first starts it reads
+its config from `%USERPROFILE%`. So setting `%HOME%` variable after
+that doesn't change anything. For me the easiest solution was to just
+include this step in the
+[deployment script](https://github.com/rexim/emacs.rc/blob/4196bbb0980efa8491eaefe0084c36d07d7f6cf5/deploy.ps1#L4)
+of my emacs config.
