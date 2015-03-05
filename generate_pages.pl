@@ -47,7 +47,7 @@ sub parse_post_file {
     return \%post;
 }
 
-sub get_all_post_files {
+sub get_post_files_form_dir {
     my ($posts_directory) = @_;
     my @posts = ();
 
@@ -62,7 +62,7 @@ sub get_all_post_files {
     return \@posts;
 }
 
-sub prepare_posts {
+sub compile_post_files {
     my ($post_file_names) = @_;
     my $rfc3339 = DateTime::Format::RFC3339->new();
     my @posts = ();
@@ -112,7 +112,7 @@ sub main {
 
     dircopy("./assets/", "./html/");
 
-    my $posts = prepare_posts(get_all_post_files("./posts/"));
+    my $posts = compile_post_files(get_post_files_form_dir("./posts/"));
     my $template = Template->new({ RELATIVE => 1,
                                    INCLUDE_PATH => "./templates",
                                    ENCODING => 'utf8' });
