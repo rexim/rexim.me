@@ -34,4 +34,14 @@
       </div>
       [% END %]
     </div>
+
+    <div class="archive-paginator">
+    [% FOR page_button IN paginator.page_buttons %]
+      [% IF page_button.is_current %]
+      <span class="archive-current-page">[% page_button.label %]</span>
+      [% ELSE %]
+      <a href="[% page_button.href %]" class="archive-page">[% page_button.label %]</a>
+      [% END %]
+    [% END %]
+    </div>
 [% END %]

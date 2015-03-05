@@ -163,6 +163,21 @@ body {
     margin-bottom: 30px;
 }
 
+.archive-paginator {
+    margin-top: 50px;
+}
+
+.archive-page {
+    margin-right: 10px;
+    padding: 6px;
+}
+
+.archive-current-page {
+    margin-right: 10px;
+    border: black solid 1px;
+    padding: 5px;
+}
+
 .archive-title {
     font-size: 40px;
     color: #300;

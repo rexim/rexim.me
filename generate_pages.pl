@@ -14,6 +14,8 @@ use DateTime::Format::Mail;
 use Text::Markdown 'markdown';
 use File::Basename;
 use Template;
+use List::Util qw[min max];
+use POSIX qw/ceil/;
 
 sub parse_post_file {
     use constant {
@@ -98,6 +100,58 @@ sub settings_from_args {
     }
 }
 
+sub filter_posts_by_current_page($$$) {
+    my ($posts, $page_size, $current_page) = @_;
+
+    my $posts_count = @$posts;
+    my $lower_bound = $current_page * $page_size;
+    my $upper_bound = min(($current_page + 1) * $page_size, $posts_count) - 1;
+
+    if ($lower_bound <= $upper_bound) {
+        my @xs = @$posts[$lower_bound .. $upper_bound];
+        return \@xs;
+    } else {
+        return [];
+    }
+}
+
+sub get_pages_count($$) {
+    my ($posts, $page_size) = @_;
+    my $posts_count = @$posts;
+    return ceil($posts_count / $page_size);
+}
+
+sub make_index_page_name($) {
+    my ($page_number) = @_;
+    if ($page_number > 0) {
+        return "index_page_$page_number.html";
+    } else {
+        return "index.html";
+    }
+}
+
+sub make_paginator($$) {
+    my ($pages_count, $current_page) = @_;
+    my $paginator = {
+        page_buttons => []
+    };
+
+    for (my $i = 0; $i < $pages_count; $i++) {
+        my $page_button = {
+            label => "$i",
+            is_current => $i == $current_page
+        };
+
+        if (!$page_button->{is_current}) {
+            $page_button->{href} = make_index_page_name($i);
+        }
+
+        push $paginator->{page_buttons}, $page_button
+    }
+
+    return $paginator;
+}
+
 sub main {
     my $settings = {
         comments_enabled => 0
@@ -134,15 +188,26 @@ sub main {
         print "DONE\n";
     };
 
-    $generate_file->("index.html", "index.tt");
     $generate_file->("sitemap.xml", "sitemap.tt");
     $generate_file->("rss.xml", "rss.tt");
 
+    # Generate posts
     foreach(@$posts) {
         my $page_name = $_->{page_name};
         $generate_file->("$page_name.html", "post.tt",
                          { post => $_,
                            settings => $settings});
+    }
+
+    # Generate pages
+    my $page_size = 6;
+    my $pages_count = get_pages_count($posts, $page_size);
+    for (my $i = 0; $i < $pages_count; $i++) {
+        $generate_file->(make_index_page_name($i), "index.tt",
+                         { posts => filter_posts_by_current_page($posts, $page_size, $i),
+                           paginator => make_paginator($pages_count, $i),
+                           basurl => "http://rexim.me/",
+                           settings => $settings });
     }
 }
 
