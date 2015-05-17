@@ -1,3 +1,4 @@
+[% USE date %]
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
@@ -39,7 +40,15 @@
 
     <div class="footer">
       <div class="right-cell">
-        <span class="copyright">Copyright Bullshit &copy; 2014</span>
+        <span class="copyright">
+        [% start_year = '2014' %]
+        [% current_year = date.format(date.now, '%Y') %]
+        [% IF current_year == start_year %]
+          Copyright Bullshit &copy; [% start_year %]
+        [% ELSE %]
+          Copyright Bullshit &copy; [% start_year %]-[% current_year %]
+        [% END %]
+        </span>
       </div>
       <div class="left-cell">
         <a id="email-button" class="fa fa-envelope contact-icon" data-email="cmV4aW1rdXRAZ21haWwuY29tCg==" href="mailto:{email}"></a>
