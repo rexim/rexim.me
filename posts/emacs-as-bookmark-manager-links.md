@@ -106,3 +106,10 @@ redundant whitespace characters. Here is its implementation:
 So much code! I hope it is not too hard to read. I just wanted to show
 my entire train of thoughts. I've put the complete code
 [here](https://gist.github.com/rexim/8883151).
+
+**UPD.** Almost a year ago I decided to move this code out of my
+  [personal emacs config](https://github.com/rexim/emacs.rc) and
+  create
+  [org-cliplink](https://github.com/rexim/org-cliplink). Currently, it
+  has much more features than the code in this post. Any bug reports
+  and PRs are welcome.
