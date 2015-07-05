@@ -89,17 +89,6 @@ sub compile_post_files {
     return \@posts;
 }
 
-sub settings_from_args {
-    my ($settings) = @_;
-    foreach (@ARGV) {
-        if ($_ eq '--comments-enabled') {
-            $settings->{comments_enabled} = 1;
-        } else {
-            die "$_ is unknown option\n";
-        }
-    }
-}
-
 sub filter_posts_by_current_page($$$) {
     my ($posts, $page_size, $current_page) = @_;
 
@@ -153,13 +142,6 @@ sub make_paginator($$) {
 }
 
 sub main {
-    my $settings = {
-        comments_enabled => 0
-    };
-    settings_from_args($settings);
-
-    print Dumper($settings), "\n";
-
     if (-d "./html/") {
         rmdir("./html/");
     }
@@ -176,8 +158,7 @@ sub main {
 
         if (not defined $context) {
             $context = { posts => $posts,
-                         baseurl => "http://rexim.me/",
-                         settings => $settings };
+                         baseurl => "http://rexim.me/" };
         }
 
         print "[INFO] $file_name ...";
@@ -185,7 +166,7 @@ sub main {
                            $context,
                            "./html/$file_name",
                            { binmode => ':utf8' }) || die $template->error();
-        print "DONE\n";
+        print " DONE\n";
     };
 
     $generate_file->("sitemap.xml", "sitemap.tt");
@@ -195,8 +176,7 @@ sub main {
     foreach(@$posts) {
         my $page_name = $_->{page_name};
         $generate_file->("$page_name.html", "post.tt",
-                         { post => $_,
-                           settings => $settings});
+                         { post => $_ });
     }
 
     # Generate pages
@@ -206,8 +186,7 @@ sub main {
         $generate_file->(make_index_page_name($i), "index.tt",
                          { posts => filter_posts_by_current_page($posts, $page_size, $i),
                            paginator => make_paginator($pages_count, $i),
-                           basurl => "http://rexim.me/",
-                           settings => $settings });
+                           basurl => "http://rexim.me/" });
     }
 }
 
