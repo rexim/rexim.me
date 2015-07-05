@@ -17,47 +17,7 @@ use Template;
 use List::Util qw[min max];
 use POSIX qw/ceil/;
 
-use Olyvova::Metadata qw(parse_metadata_in_file);
-
-sub get_post_files_form_dir {
-    my ($posts_directory) = @_;
-    my @posts = ();
-
-    opendir(my $dh, $posts_directory) or die $!;
-    while (my $file = readdir($dh)) {
-        if ($file =~ m/.*\.md/) {
-            push @posts, "$posts_directory/$file";
-        }
-    }
-    closedir($dh);
-
-    return \@posts;
-}
-
-sub compile_post_files {
-    my ($post_file_names) = @_;
-    my $rfc3339 = DateTime::Format::RFC3339->new();
-    my @posts = ();
-
-    foreach (@$post_file_names) {
-        my $page_name = basename $_, (".md");
-        my $post = parse_metadata_in_file($_);
-        my $date = DateTime::Format::Mail->parse_datetime($post->{date});
-        $date->set_formatter($rfc3339);
-
-        $post->{content} = markdown($post->{content});
-        $post->{date} = $date;
-        $post->{page_name} = $page_name;
-
-        push @posts, $post;
-    }
-
-    @posts = sort {
-        DateTime->compare($b->{date}, $a->{date});
-    } @posts;
-
-    return \@posts;
-}
+use Olyvova::Post qw(compile_posts_dir);
 
 sub filter_posts_by_current_page($$$) {
     my ($posts, $page_size, $current_page) = @_;
@@ -118,7 +78,7 @@ sub main {
 
     dircopy("./assets/", "./html/");
 
-    my $posts = compile_post_files(get_post_files_form_dir("./posts/"));
+    my $posts = compile_posts_dir("./posts/");
     my $template = Template->new({ RELATIVE => 1,
                                    INCLUDE_PATH => "./templates",
                                    ENCODING => 'utf8' });
