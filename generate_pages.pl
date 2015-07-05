@@ -17,37 +17,7 @@ use Template;
 use List::Util qw[min max];
 use POSIX qw/ceil/;
 
-sub parse_post_file {
-    use constant {
-        METADATA => 0,
-        CONTENT => 1
-    };
-    my $parse_state = METADATA;
-
-    my %post = ();
-    my $content = "";
-
-    my ($file_name) = @_;
-    open(my $fh, $file_name);
-    binmode($fh, ':utf8');
-    while (<$fh>) {
-        if ($parse_state == METADATA) {
-            if (my ($key, $value) = $_ =~ m/^\s*([a-zA-Z0-9_]+)\s*:\s*(.*)\s*$/) {
-                $post{lc $key} = $value;
-            } else {
-                $parse_state = CONTENT;
-                $content = $content . $_;
-            }
-        } else {
-            $content = $content . $_;
-        }
-    }
-    close($fh);
-
-    $post{content} = $content;
-
-    return \%post;
-}
+use Olyvova::Metadata qw(parse_metadata_in_file);
 
 sub get_post_files_form_dir {
     my ($posts_directory) = @_;
@@ -71,7 +41,7 @@ sub compile_post_files {
 
     foreach (@$post_file_names) {
         my $page_name = basename $_, (".md");
-        my $post = parse_post_file($_);
+        my $post = parse_metadata_in_file($_);
         my $date = DateTime::Format::Mail->parse_datetime($post->{date});
         $date->set_formatter($rfc3339);
 
