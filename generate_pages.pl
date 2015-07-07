@@ -8,11 +8,6 @@ use utf8;
 
 use File::Copy::Recursive qw(dircopy);
 use Data::Dumper;
-use DateTime;
-use DateTime::Format::RFC3339;
-use DateTime::Format::Mail;
-use Text::Markdown 'markdown';
-use File::Basename;
 use Template;
 use List::Util qw[min max];
 use POSIX qw/ceil/;
