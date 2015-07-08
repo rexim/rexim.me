@@ -10,8 +10,8 @@ use Exporter qw(import);
 
 our @EXPORT_OK = qw(filter_posts_by_current_page get_pages_count make_paginator);
 
-use POSIX qw/ceil/;
-use List::Util qw[min max];
+use POSIX qw(ceil);
+use List::Util qw(min);
 
 sub filter_posts_by_current_page($$$) {
     my ($posts, $page_size, $current_page) = @_;

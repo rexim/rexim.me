@@ -11,6 +11,7 @@ use Template;
 
 use Olyvova::Post qw(compile_posts_dir);
 use Olyvova::Pagination qw(filter_posts_by_current_page get_pages_count make_paginator);
+use Olyvova::Template qw(make_file_generator);
 
 sub make_index_page_name($) {
     my ($page_number) = @_;
@@ -29,28 +30,14 @@ sub main {
     dircopy("./assets/", "./html/");
 
     my $posts = compile_posts_dir("./posts/");
-    my $template = Template->new({ RELATIVE => 1,
-                                   INCLUDE_PATH => "./templates",
-                                   ENCODING => 'utf8' });
+    my $generate_file = make_file_generator("./templates", "./html");
 
-    my $generate_file = sub {
-        my ($file_name, $template_name, $context) = @_;
-
-        if (not defined $context) {
-            $context = { posts => $posts,
-                         baseurl => "http://rexim.me/" };
-        }
-
-        print "[INFO] $file_name ...";
-        $template->process("./templates/$template_name",
-                           $context,
-                           "./html/$file_name",
-                           { binmode => ':utf8' }) || die $template->error();
-        print " DONE\n";
-    };
-
-    $generate_file->("sitemap.xml", "sitemap.tt");
-    $generate_file->("rss.xml", "rss.tt");
+    $generate_file->("sitemap.xml", "sitemap.tt",
+                     { posts => $posts,
+                       baseurl => "http://rexim.me/" });
+    $generate_file->("rss.xml", "rss.tt",
+                     { posts => $posts,
+                       baseurl => "http://rexim.me/" });
 
     # Generate posts
     foreach(@$posts) {
