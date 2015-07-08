@@ -7,7 +7,6 @@ use warnings;
 use utf8;
 
 use File::Copy::Recursive qw(dircopy);
-use Template;
 
 use Olyvova::Post qw(compile_posts_dir);
 use Olyvova::Pagination qw(filter_posts_by_current_page get_pages_count make_paginator);
