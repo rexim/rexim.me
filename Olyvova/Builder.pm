@@ -9,8 +9,12 @@ use utf8;
 use Exporter qw(import);
 
 use Data::Dumper;
+# TODO: get rid of this dependency
+use Switch;
 
 our @EXPORT_OK = qw(single multiple pagination build);
+
+use Olyvova::Template qw(make_file_generator);
 
 use constant {
     SINGLE => 'single',
@@ -34,7 +38,7 @@ sub multiple($$) {
         type => MULTIPLE,
         elements => $elements,
         transformer => $transformer
-    }
+    };
 }
 
 sub pagination($$$) {
@@ -47,6 +51,38 @@ sub pagination($$$) {
     };
 }
 
+sub build_route($$) {
+    my ($file_generator, $route) = @_;
+    my $route_type = $route->{type};
+
+    switch ($route->{type}) {
+        case SINGLE {
+            print "SINGLE\n";
+        }
+
+        case MULTIPLE {
+            print "MULTIPLE\n";
+        }
+
+        case PAGINATION {
+            print "PAGINATION\n";
+        }
+
+        else {
+            print "UNKNOWN\n";
+        }
+    }
+}
+
 sub build($) {
-    print Dumper($_[0]);
+    my ($site) = @_;
+    my $assets = $site->{assets};
+    my $templates = $site->{templates};
+    my $output_dir = $site->{output_dir};
+    my $routes = $site->{routes};
+    my $file_generator = make_file_generator($templates, $output_dir);
+
+    foreach (@$routes) {
+        build_route($file_generator, $_);
+    }
 }
