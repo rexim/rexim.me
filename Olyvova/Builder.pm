@@ -58,9 +58,11 @@ sub build_route {
 
     switch ($route_type) {
         case SINGLE {
+            print "[INFO] ", $route->{file_name}, " ...";
             $file_generator->($route->{file_name},
                               $route->{template_name},
                               $route->{context});
+            print " DONE\n";
         }
 
         case MULTIPLE {

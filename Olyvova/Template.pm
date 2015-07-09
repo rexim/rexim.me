@@ -20,12 +20,9 @@ sub make_file_generator($$)
                                    ENCODING => 'utf8' });
     return sub($$$) {
         my ($file_name, $template_name, $context) = @_;
-
-        print "[INFO] $file_name ...";
         $template->process("$templates_dir/$template_name",
                            $context,
                            "$output_dir/$file_name",
                            { binmode => ':utf8' }) || die $template->error();
-        print " DONE\n";
     };
 }
