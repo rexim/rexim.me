@@ -9,7 +9,7 @@ Source code of my blog at <http://rexim.me/>.
 
 The blog engine is pretty simple. You write posts in markdown with
 metadata (see `./posts/` directory and Markdown Metadata section). Then
-run `./generate_pages.pl` script to generate static HTML pages. The
+run `./site.pl` script to generate static HTML pages. The
 script is written in Perl and requires some additional dependencies
 (see Dependencies section). And finally, use `./html/` as a root for
 web-server.
@@ -23,7 +23,7 @@ python's Simple HTTP Server:
 
 ## Markdown Metadata ##
 
-The `generate_pages.pl` uses metadata within markdown
+The `site.pl` uses metadata within markdown
 document. Metadata is a key-value table at the top of a document.
 Every row of the table matches
 `^\s*([a-zA-Z0-9_]+)\s*:\s*(.*)\s*$`. The key is the text before the
@@ -42,7 +42,7 @@ See `./posts/` directory for examples.
 ## Dependencies ##
 
 First of all, a Perl interpreter is required to run the
-`./generate_pages.pl` script. The script itself has additional
+`./site.pl` script. The script itself has additional
 dependencies (see the top of the script) which you can install through
 [CPAN](http://www.cpan.org/).
 

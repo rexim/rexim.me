@@ -16,7 +16,7 @@ echo "Enter to depoy, ^C to cancel"
 
 read SKIP
 
-./generate_pages.pl
+./site.pl
 rm -rfv ${BLOG_DIRECTORY}
 cp -rv ./html/ ${BLOG_DIRECTORY}
 chown -Rv ${BLOG_USER}:${BLOG_GROUP} ${BLOG_DIRECTORY}
