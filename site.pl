@@ -10,6 +10,15 @@ use Olyvova::Post qw(compile_posts_dir);
 use Olyvova::Pagination qw(make_paginator);
 use Olyvova::Builder qw(single multiple pagination build);
 
+sub make_index_page_name($) {
+    my ($page_number) = @_;
+    if ($page_number > 0) {
+        return "index_page_$page_number.html";
+    } else {
+        return "index.html";
+    }
+}
+
 my $posts = compile_posts_dir("./posts/");
 my $site = {
     assets => "./assets/",
@@ -30,7 +39,7 @@ my $site = {
             my ($post) = @_;
             my $page_name = $post->{page_name};
             
-            single ("$page_name.html", "post.tt", sub {
+            single ("$page_name.html", "post.tt", {
                 post => $post
             });
         }),
