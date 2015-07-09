@@ -1,0 +1,3 @@
+[submodule "Olyvova"]
+	path = Olyvova
+	url = git@github.com:rexim/Olyvova.git
