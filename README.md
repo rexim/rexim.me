@@ -11,10 +11,8 @@ This blog uses [Olyvova](https://github.com/rexim/Olyvova) static blog
 generator. You write posts in markdown with metadata (see `./posts/`
 directory and
 [Markdown Metadata section](https://github.com/rexim/Olyvova/blob/c173e4e1fc6280cb58adcce6e6f5739f1d7d586d/README.md#markdown-metadata)). Then
-run `./site.pl` script to generate static HTML pages. The script is
-written in Perl and requires some additional dependencies (see
-[Dependencies section](https://github.com/rexim/Olyvova/blob/c173e4e1fc6280cb58adcce6e6f5739f1d7d586d/README.md#dependencies)). And
-finally, use `./html/` as a root for web-server.
+run `./site.pl` script to generate static HTML pages. And finally, use
+`./html/` as a root for web-server.
 
 Before deploying on production, you can test the generated pages using
 python's Simple HTTP Server:
