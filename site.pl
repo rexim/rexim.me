@@ -6,6 +6,7 @@ use strict;
 use warnings;
 use utf8;
 
+use lib './Olyvova/lib';
 use Olyvova::Post qw(compile_posts_dir);
 use Olyvova::Pagination qw(make_paginator);
 use Olyvova::Builder qw(single multiple pagination build);
