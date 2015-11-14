@@ -16,10 +16,9 @@ echo "Enter to depoy, ^C to cancel"
 
 read SKIP
 
-cpanm git://github.com/rexim/Olyvova.git
-./site.pl
-rm -rfv ${BLOG_DIRECTORY}
-cp -rv ./html/ ${BLOG_DIRECTORY}
-chown -Rv ${BLOG_USER}:${BLOG_GROUP} ${BLOG_DIRECTORY}
-
+cpanm git://github.com/rexim/Olyvova.git &&
+./site.pl &&
+rm -rfv ${BLOG_DIRECTORY} &&
+cp -rv ./html/ ${BLOG_DIRECTORY} &&
+chown -Rv ${BLOG_USER}:${BLOG_GROUP} ${BLOG_DIRECTORY} &&
 echo "DONE"
